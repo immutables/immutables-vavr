@@ -22,23 +22,23 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangQueueEncoding<T>
 {
+  @Encoding.Impl
+  private Queue<T> field;
+
   JavaslangQueueEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private Queue<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private Queue<T> queue = Queue.empty();
+
     Builder()
     {
 
     }
-
-    private Queue<T> queue = Queue.empty();
 
     @Encoding.Naming(value = "enqueue*", depluralize = true)
     @Encoding.Init
@@ -56,7 +56,6 @@ class JavaslangQueueEncoding<T>
       this.queue = this.queue.enqueueAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

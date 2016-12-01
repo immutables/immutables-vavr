@@ -17,30 +17,30 @@
 package org.immutables.javaslang.encodings;
 
 import javaslang.Tuple2;
-import javaslang.collection.TreeMap;
 import javaslang.collection.Map;
+import javaslang.collection.TreeMap;
 import org.immutables.encode.Encoding;
 
 @Encoding
 class JavaslangTreeMapEncoding<K, V>
 {
+  @Encoding.Impl
+  private TreeMap<K, V> field;
+
   JavaslangTreeMapEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private TreeMap<K, V> field;
-
   @Encoding.Builder
   static final class Builder<K extends Comparable<K>, V>
   {
+    private TreeMap<K, V> map = TreeMap.empty();
+
     Builder()
     {
 
     }
-
-    private TreeMap<K, V> map = TreeMap.empty();
 
     @Encoding.Naming(value = "put*", depluralize = true)
     @Encoding.Init
@@ -59,7 +59,6 @@ class JavaslangTreeMapEncoding<K, V>
       this.map = this.map.put(entry);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

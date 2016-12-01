@@ -22,25 +22,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangHashSetEncoding<T>
 {
+  @Encoding.Impl
+  private HashSet<T> field;
+
   JavaslangHashSetEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private HashSet<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private HashSet<T> set = HashSet.empty();
+
     Builder()
     {
 
     }
 
-    private HashSet<T> set = HashSet.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final T element)
@@ -48,7 +48,7 @@ class JavaslangHashSetEncoding<T>
       this.set = this.set.add(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<T> element)
@@ -56,7 +56,6 @@ class JavaslangHashSetEncoding<T>
       this.set = this.set.addAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

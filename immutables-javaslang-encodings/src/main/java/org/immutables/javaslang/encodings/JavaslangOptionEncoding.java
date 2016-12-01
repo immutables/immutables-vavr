@@ -22,25 +22,24 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangOptionEncoding<T>
 {
+  @Encoding.Impl
+  private Option<T> field;
+
   JavaslangOptionEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private Option<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private Option<T> optional = Option.none();
+
     Builder()
     {
 
     }
 
-    private Option<T> optional = Option.none();
-
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

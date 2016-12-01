@@ -24,23 +24,23 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangLinkedHashMapEncoding<K, V>
 {
+  @Encoding.Impl
+  private LinkedHashMap<K, V> field;
+
   JavaslangLinkedHashMapEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private LinkedHashMap<K, V> field;
-
   @Encoding.Builder
   static final class Builder<K, V>
   {
+    private LinkedHashMap<K, V> map = LinkedHashMap.empty();
+
     Builder()
     {
 
     }
-
-    private LinkedHashMap<K, V> map = LinkedHashMap.empty();
 
     @Encoding.Naming(value = "put*", depluralize = true)
     @Encoding.Init
@@ -51,7 +51,7 @@ class JavaslangLinkedHashMapEncoding<K, V>
       this.map = this.map.put(key, value);
     }
 
-    @Encoding.Naming(value = "putEntry*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void putEntry(
       final Tuple2<K, V> entry)
@@ -59,7 +59,6 @@ class JavaslangLinkedHashMapEncoding<K, V>
       this.map = this.map.put(entry);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

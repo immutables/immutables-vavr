@@ -22,25 +22,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangCharSeqEncoding
 {
+  @Encoding.Impl
+  private CharSeq field;
+
   JavaslangCharSeqEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private CharSeq field;
-
   @Encoding.Builder
   static final class Builder
   {
+    private CharSeq string = CharSeq.empty();
+
     Builder()
     {
 
     }
 
-    private CharSeq string = CharSeq.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final Character element)
@@ -48,7 +48,7 @@ class JavaslangCharSeqEncoding
       this.string = this.string.append(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<Character> elements)
@@ -56,7 +56,6 @@ class JavaslangCharSeqEncoding
       this.string = this.string.appendAll(elements);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

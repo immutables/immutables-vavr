@@ -22,25 +22,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangTreeSetEncoding<T>
 {
+  @Encoding.Impl
+  private TreeSet<T> field;
+
   JavaslangTreeSetEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private TreeSet<T> field;
-
   @Encoding.Builder
   static final class Builder<T extends Comparable<T>>
   {
+    private TreeSet<T> set = TreeSet.empty();
+
     Builder()
     {
 
     }
 
-    private TreeSet<T> set = TreeSet.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final T element)
@@ -48,7 +48,7 @@ class JavaslangTreeSetEncoding<T>
       this.set = this.set.add(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<T> element)
@@ -56,7 +56,6 @@ class JavaslangTreeSetEncoding<T>
       this.set = this.set.addAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

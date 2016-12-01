@@ -22,25 +22,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangListEncoding<T>
 {
+  @Encoding.Impl
+  private List<T> field;
+
   JavaslangListEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private List<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private List<T> list = List.empty();
+
     Builder()
     {
 
     }
 
-    private List<T> list = List.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final T element)
@@ -48,7 +48,7 @@ class JavaslangListEncoding<T>
       this.list = this.list.append(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<T> element)
@@ -56,7 +56,6 @@ class JavaslangListEncoding<T>
       this.list = this.list.appendAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

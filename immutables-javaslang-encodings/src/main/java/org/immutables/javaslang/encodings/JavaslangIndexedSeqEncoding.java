@@ -23,25 +23,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangIndexedSeqEncoding<T>
 {
+  @Encoding.Impl
+  private IndexedSeq<T> field;
+
   JavaslangIndexedSeqEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private IndexedSeq<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private IndexedSeq<T> indexed_seq = Array.empty();
+
     Builder()
     {
 
     }
 
-    private IndexedSeq<T> indexed_seq = Array.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final T element)
@@ -49,7 +49,7 @@ class JavaslangIndexedSeqEncoding<T>
       this.indexed_seq = this.indexed_seq.append(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<T> element)
@@ -57,7 +57,6 @@ class JavaslangIndexedSeqEncoding<T>
       this.indexed_seq = this.indexed_seq.appendAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

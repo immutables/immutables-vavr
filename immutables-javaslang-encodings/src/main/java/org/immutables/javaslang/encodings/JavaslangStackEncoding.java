@@ -23,25 +23,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangStackEncoding<T>
 {
+  @Encoding.Impl
+  private Stack<T> field;
+
   JavaslangStackEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private Stack<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private Stack<T> stack = List.empty();
+
     Builder()
     {
 
     }
 
-    private Stack<T> stack = List.empty();
-
-    @Encoding.Naming(value = "enqueue*", depluralize = true)
+    @Encoding.Naming(value = "push*", depluralize = true)
     @Encoding.Init
     void push(
       final T element)
@@ -49,7 +49,7 @@ class JavaslangStackEncoding<T>
       this.stack = this.stack.push(element);
     }
 
-    @Encoding.Naming(value = "enqueueAll*", depluralize = true)
+    @Encoding.Naming(value = "pushAll*", depluralize = true)
     @Encoding.Init
     void pushAll(
       final Iterable<T> element)
@@ -57,7 +57,6 @@ class JavaslangStackEncoding<T>
       this.stack = this.stack.pushAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

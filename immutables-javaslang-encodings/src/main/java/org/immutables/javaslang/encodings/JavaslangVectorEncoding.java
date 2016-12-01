@@ -22,25 +22,25 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangVectorEncoding<T>
 {
+  @Encoding.Impl
+  private Vector<T> field;
+
   JavaslangVectorEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private Vector<T> field;
-
   @Encoding.Builder
   static final class Builder<T>
   {
+    private Vector<T> vector = Vector.empty();
+
     Builder()
     {
 
     }
 
-    private Vector<T> vector = Vector.empty();
-
-    @Encoding.Naming(value = "add*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
     @Encoding.Init
     void add(
       final T element)
@@ -48,7 +48,7 @@ class JavaslangVectorEncoding<T>
       this.vector = this.vector.append(element);
     }
 
-    @Encoding.Naming(value = "addAll*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
     void addAll(
       final Iterable<T> element)
@@ -56,7 +56,6 @@ class JavaslangVectorEncoding<T>
       this.vector = this.vector.appendAll(element);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

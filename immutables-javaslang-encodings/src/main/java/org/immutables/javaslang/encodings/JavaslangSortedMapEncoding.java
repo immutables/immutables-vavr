@@ -25,23 +25,23 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangSortedMapEncoding<K, V>
 {
+  @Encoding.Impl
+  private SortedMap<K, V> field;
+
   JavaslangSortedMapEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private SortedMap<K, V> field;
-
   @Encoding.Builder
   static final class Builder<K extends Comparable<K>, V>
   {
+    private SortedMap<K, V> map = TreeMap.empty();
+
     Builder()
     {
 
     }
-
-    private SortedMap<K, V> map = TreeMap.empty();
 
     @Encoding.Naming(value = "put*", depluralize = true)
     @Encoding.Init
@@ -60,7 +60,6 @@ class JavaslangSortedMapEncoding<K, V>
       this.map = this.map.put(entry);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(

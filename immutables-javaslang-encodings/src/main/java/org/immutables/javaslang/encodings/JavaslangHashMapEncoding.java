@@ -24,23 +24,23 @@ import org.immutables.encode.Encoding;
 @Encoding
 class JavaslangHashMapEncoding<K, V>
 {
+  @Encoding.Impl
+  private HashMap<K, V> field;
+
   JavaslangHashMapEncoding()
   {
 
   }
 
-  @Encoding.Impl
-  private HashMap<K, V> field;
-
   @Encoding.Builder
   static final class Builder<K, V>
   {
+    private HashMap<K, V> map = HashMap.empty();
+
     Builder()
     {
 
     }
-
-    private HashMap<K, V> map = HashMap.empty();
 
     @Encoding.Naming(value = "put*", depluralize = true)
     @Encoding.Init
@@ -59,7 +59,6 @@ class JavaslangHashMapEncoding<K, V>
       this.map = this.map.put(entry);
     }
 
-    @Encoding.Naming(value = "set*")
     @Encoding.Init
     @Encoding.Copy
     void set(
