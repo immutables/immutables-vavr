@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.io7m.immutables-javaslang</groupId>
+    <groupId>org.immutables.immutables-javaslang</groupId>
     <artifactId>immutables-javaslang</artifactId>
     <version>0.1.0</version>
   </parent>
@@ -15,7 +15,7 @@
   <packaging>jar</packaging>
   <name>immutables-javaslang-examples</name>
   <description>Immutables.org examples for Javaslang (Examples)</description>
-  <url>http://io7m.github.io/immutables-javaslang/</url>
+  <url>http://github.com/immutables/immutables-javaslang/</url>
 
   <scm>
     <url>${project.parent.scm.url}</url>
