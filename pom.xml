@@ -64,7 +64,7 @@
 
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/io7m/immutables-javaslang</url>
+    <url>https://travis-ci.org/immutables/immutables-javaslang</url>
   </ciManagement>
 
   <prerequisites>
