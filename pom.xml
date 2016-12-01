@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.io7m.immutables-javaslang</groupId>
+  <artifactId>immutables-javaslang</artifactId>
+  <version>0.1.0</version>
+
+  <packaging>pom</packaging>
+  <name>immutables-javaslang</name>
+  <description>Immutables.org encodings for Javaslang</description>
+  <url>http://github.com/io7m/immutables-javaslang</url>
+
+  <modules>
+    <module>immutables-javaslang-checkstyle</module>
+    <module>immutables-javaslang-encodings</module>
+    <module>immutables-javaslang-examples</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <siteReposDirectory>/com/io7m/immutables-javaslang</siteReposDirectory>
+    <siteDocumentationDirectory>/com/io7m/immutables-javaslang/immutables-javaslang-documentation</siteDocumentationDirectory>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>ISC License</name>
+      <url>http://io7m.com/license/isc.txt</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/io7m/immutables-javaslang</url>
+    <connection>scm:git:https://github.com/io7m/immutables-javaslang</connection>
+    <developerConnection>scm:git:https://github.com/io7m/immutables-javaslang</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>io7m</id>
+      <name>io7m</name>
+      <email>code@io7m.com</email>
+      <url>http://io7m.com</url>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>http://github.com/io7m/immutables-javaslang/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <distributionManagement>
+    <site>
+      <id>GitHub</id>
+      <name>GitHub</name>
+      <url>http://io7m.github.io/immutables-javaslang</url>
+    </site>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <ciManagement>
+    <system>Travis CI</system>
+    <url>https://travis-ci.org/io7m/immutables-javaslang</url>
+  </ciManagement>
+
+  <prerequisites>
+    <maven>3.0.4</maven>
+  </prerequisites>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>2.3.9</version>
+      </dependency>
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>encode</artifactId>
+        <version>2.3.9</version>
+      </dependency>
+      <dependency>
+        <groupId>io.javaslang</groupId>
+        <artifactId>javaslang</artifactId>
+        <version>2.0.5</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <validate>true</validate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.19.1</version>
+      </plugin>
+      <plugin>
+        <groupId>com.io7m.changelog</groupId>
+        <artifactId>io7m-changelog-plugin</artifactId>
+        <version>2.1.2</version>
+        <inherited>false</inherited>
+        <configuration>
+          <file>README-CHANGES.xml</file>
+          <feedAuthorEmail>contact@io7m.com</feedAuthorEmail>
+          <feedAuthorName>io7m release robot</feedAuthorName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Submodule plugin versions -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.10.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+          <configuration>
+            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+          </configuration>
+        </plugin>
+
+        <!-- Submodule checkstyle configuration. -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <dependencies>
+            <dependency>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>immutables-javaslang-checkstyle</artifactId>
+              <version>${project.version}</version>
+            </dependency>
+          </dependencies>
+          <executions>
+            <execution>
+              <id>validate</id>
+              <phase>process-sources</phase>
+              <configuration>
+                <configLocation>com/io7m/immutables/javaslang/checkstyle/checkstyle.xml</configLocation>
+                <encoding>UTF-8</encoding>
+                <consoleOutput>true</consoleOutput>
+                <failsOnError>true</failsOnError>
+                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+              </configuration>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.6</version>
+        </plugin>
+        <plugin>
+          <groupId>com.io7m.jstructural</groupId>
+          <artifactId>io7m-jstructural-maven-plugin</artifactId>
+          <version>5.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>truezip-maven-plugin</artifactId>
+          <version>1.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>3.2.0</version>
+          <extensions>true</extensions>
+        </plugin>
+
+        <!-- Require JDK >= 1.8 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5.1</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
+
+        <!-- Produce jar files -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.0</version>
+          <executions>
+            <!-- Produce jar file with custom manifest -->
+            <execution>
+              <id>default-jar</id>
+              <configuration>
+                <archive>
+                  <manifestEntries>
+                    <Specification-Title>${project.name}</Specification-Title>
+                    <Specification-Version>${project.version}</Specification-Version>
+                    <Specification-Vendor>io7m.com</Specification-Vendor>
+                    <Implementation-Title>${project.name}</Implementation-Title>
+                    <Implementation-Version>${project.version}</Implementation-Version>
+                    <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                    <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                    <Built-By>io7m</Built-By>
+                    <Sealed>true</Sealed>
+                  </manifestEntries>
+                </archive>
+              </configuration>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+            <!-- Produce jar file of tests -->
+            <execution>
+              <id>test-jar</id>
+              <goals>
+                <goal>test-jar</goal>
+              </goals>
+              <configuration>
+                <archive>
+                  <manifestEntries>
+                    <Specification-Title>${project.name}</Specification-Title>
+                    <Specification-Version>${project.version}</Specification-Version>
+                    <Specification-Vendor>io7m.com</Specification-Vendor>
+                    <Implementation-Title>${project.name}</Implementation-Title>
+                    <Implementation-Version>${project.version}</Implementation-Version>
+                    <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                    <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                    <Built-By>io7m</Built-By>
+                  </manifestEntries>
+                </archive>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- Sonatype OSSRH deployment -->
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.7</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>sonatype-nexus-staging</serverId>
+            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <!-- Allow deployment over ssh -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh-external</artifactId>
+        <version>2.9</version>
+      </extension>
+    </extensions>
+
+    <!-- Shared build logic for all submodules -->
+    <plugins>
+
+      <!-- Create source jars -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+              <goal>test-jar-no-fork</goal>
+            </goals>
+            <configuration>
+              <archive>
+                <manifestEntries>
+                  <Specification-Title>${project.name}</Specification-Title>
+                  <Specification-Version>${project.version}</Specification-Version>
+                  <Specification-Vendor>io7m.com</Specification-Vendor>
+                  <Implementation-Title>${project.name}</Implementation-Title>
+                  <Implementation-Version>${project.version}</Implementation-Version>
+                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                  <Built-By>io7m</Built-By>
+                </manifestEntries>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Create javadoc jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <bottom><![CDATA[Copyright &#169; {currentYear} &lt;code@io7m.com&gt; http://io7m.com]]></bottom>
+              <archive>
+                <manifestEntries>
+                  <Specification-Title>${project.name}</Specification-Title>
+                  <Specification-Version>${project.version}</Specification-Version>
+                  <Specification-Vendor>io7m.com</Specification-Vendor>
+                  <Implementation-Title>${project.name}</Implementation-Title>
+                  <Implementation-Version>${project.version}</Implementation-Version>
+                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                  <Built-By>io7m</Built-By>
+                </manifestEntries>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Produce OSGi bundle -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Export-Package>com.io7m.jproperties</Export-Package>
+            <Specification-Title>${project.name}</Specification-Title>
+            <Specification-Version>${project.version}</Specification-Version>
+            <Specification-Vendor>io7m.com</Specification-Vendor>
+            <Implementation-Title>${project.name}</Implementation-Title>
+            <Implementation-Version>${project.version}</Implementation-Version>
+            <Implementation-Vendor>io7m.com</Implementation-Vendor>
+            <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+            <Built-By>io7m</Built-By>
+            <Sealed>true</Sealed>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Sign artifacts when deploying to io7m -->
+  <profiles>
+    <profile>
+      <id>io7m-deployment-private</id>
+      <activation>
+        <property>
+          <name>io7m.deployment</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

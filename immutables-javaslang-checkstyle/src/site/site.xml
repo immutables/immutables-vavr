@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <body>
+    <menu name="Project">
+      <item name="Overview" href="index.html"/>
+      <item name="Releases" href="releases.html"/>
+      <item name="Documentation" href="releases.html#Documentation"/>
+      <item name="Changes" href="changes.html"/>
+      <item name="Sources" href="source-repository.html"/>
+      <item name="License" href="license.html"/>
+      <item name="Issues" href="issue-tracking.html"/>
+      <item name="Contacts" href="team-list.html"/>
+      <item name="Dependencies" href="dependencies.html"/>
+      <item name="Metadata" href="project-info.html"/>
+      <item name="Reports" href="project-reports.html"/>
+    </menu>
+    <menu name="Parent" ref="parent"/>
+    <menu name="Modules" ref="modules"/>
+  </body>
+
+</project>

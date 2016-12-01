@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document
+  xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+  <properties>
+    <title>Releases</title>
+  </properties>
+  <body>
+    <section name="Releases">
+      <p>The current release is ${project.version}.</p>
+      <p>
+        Source code and binaries are available from the
+        <a href="https://repo1.maven.org/maven2/${siteReposDirectory}/">repository</a>.
+      </p>
+    </section>
+    <section name="Documentation">
+      <p>
+        Documentation for the ${project.version} release is available for reading online.
+      </p>
+      <ul>
+        <li><a href="documentation/index-m.xhtml">XHTML - one page per section</a></li>
+        <li><a href="documentation/index.xhtml">XHTML - single page</a></li>
+      </ul>
+      <p>
+        Older documentation is archived in the
+        <a href="https://repo1.maven.org/maven2/${siteDocumentationDirectory}">repository</a>.
+      </p>
+    </section>
+  </body>
+</document>
+
