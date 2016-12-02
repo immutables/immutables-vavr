@@ -6,3 +6,7 @@ immutables-javaslang
 
 A set of [Immutables](http://immutables.org) encodings for [Javaslang](http://javaslang.io).
 
+Note: Prior to a 1.0.0 release, the encodings are still in the
+experimental phase and therefore should not be relied upon to provide
+a stable API.
+
