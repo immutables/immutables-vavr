@@ -31,6 +31,15 @@
     <developerConnection>scm:git:https://github.com/immutables/immutables-javaslang</developerConnection>
   </scm>
 
+  <developers>
+    <developer>
+      <id>io7m</id>
+      <name>io7m</name>
+      <email>code@io7m.com</email>
+      <url>http://io7m.com</url>
+    </developer>
+  </developers>
+
   <organization>
     <name>The Immutables.org authors</name>
     <url>http://immutables.org</url>
