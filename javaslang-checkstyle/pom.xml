@@ -6,14 +6,14 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.immutables.immutables-javaslang</groupId>
-    <artifactId>immutables-javaslang</artifactId>
+    <groupId>org.immutables.javaslang</groupId>
+    <artifactId>javaslang</artifactId>
     <version>0.1.0</version>
   </parent>
-  <artifactId>immutables-javaslang-checkstyle</artifactId>
+  <artifactId>javaslang-checkstyle</artifactId>
 
   <packaging>jar</packaging>
-  <name>immutables-javaslang-checkstyle</name>
+  <name>javaslang-checkstyle</name>
   <description>Immutables.org encodings for Javaslang (Checkstyle policy)</description>
   <url>http://github.com/immutables/immutables-javaslang/</url>
 

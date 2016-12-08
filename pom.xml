@@ -5,19 +5,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.immutables.immutables-javaslang</groupId>
-  <artifactId>immutables-javaslang</artifactId>
+  <groupId>org.immutables.javaslang</groupId>
+  <artifactId>javaslang</artifactId>
   <version>0.1.0</version>
 
   <packaging>pom</packaging>
-  <name>immutables-javaslang</name>
+  <name>javaslang</name>
   <description>Immutables.org encodings for Javaslang</description>
   <url>http://github.com/immutables/immutables-javaslang</url>
 
   <modules>
-    <module>immutables-javaslang-checkstyle</module>
-    <module>immutables-javaslang-encodings</module>
-    <module>immutables-javaslang-examples</module>
+    <module>javaslang-checkstyle</module>
+    <module>javaslang-encodings</module>
+    <module>javaslang-examples</module>
   </modules>
 
   <properties>
@@ -148,7 +148,7 @@
           <dependencies>
             <dependency>
               <groupId>${project.groupId}</groupId>
-              <artifactId>immutables-javaslang-checkstyle</artifactId>
+              <artifactId>javaslang-checkstyle</artifactId>
               <version>${project.version}</version>
             </dependency>
           </dependencies>

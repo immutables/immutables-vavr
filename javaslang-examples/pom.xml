@@ -6,14 +6,14 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.immutables.immutables-javaslang</groupId>
-    <artifactId>immutables-javaslang</artifactId>
+    <groupId>org.immutables.javaslang</groupId>
+    <artifactId>javaslang</artifactId>
     <version>0.1.0</version>
   </parent>
-  <artifactId>immutables-javaslang-examples</artifactId>
+  <artifactId>javaslang-examples</artifactId>
 
   <packaging>jar</packaging>
-  <name>immutables-javaslang-examples</name>
+  <name>javaslang-examples</name>
   <description>Immutables.org examples for Javaslang (Examples)</description>
   <url>http://github.com/immutables/immutables-javaslang/</url>
 
@@ -26,7 +26,7 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>immutables-javaslang-encodings</artifactId>
+      <artifactId>javaslang-encodings</artifactId>
       <version>${project.version}</version>
     </dependency>
 
