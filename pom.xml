@@ -5,52 +5,48 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.io7m.immutables-javaslang</groupId>
-  <artifactId>immutables-javaslang</artifactId>
+  <groupId>org.immutables.javaslang</groupId>
+  <artifactId>javaslang</artifactId>
   <version>0.1.0</version>
 
   <packaging>pom</packaging>
-  <name>immutables-javaslang</name>
+  <name>javaslang</name>
   <description>Immutables.org encodings for Javaslang</description>
-  <url>http://github.com/io7m/immutables-javaslang</url>
+  <url>http://github.com/immutables/immutables-javaslang</url>
 
   <modules>
-    <module>immutables-javaslang-checkstyle</module>
-    <module>immutables-javaslang-encodings</module>
-    <module>immutables-javaslang-examples</module>
+    <module>javaslang-checkstyle</module>
+    <module>javaslang-encodings</module>
+    <module>javaslang-examples</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <siteReposDirectory>/com/io7m/immutables-javaslang</siteReposDirectory>
-    <siteDocumentationDirectory>/com/io7m/immutables-javaslang/immutables-javaslang-documentation</siteDocumentationDirectory>
   </properties>
+
+  <scm>
+    <url>https://github.com/immutables/immutables-javaslang</url>
+    <connection>scm:git:https://github.com/immutables/immutables-javaslang</connection>
+    <developerConnection>scm:git:https://github.com/immutables/immutables-javaslang</developerConnection>
+  </scm>
+
+  <organization>
+    <name>The Immutables.org authors</name>
+    <url>http://immutables.org</url>
+  </organization>
 
   <licenses>
     <license>
-      <name>ISC License</name>
-      <url>http://io7m.com/license/isc.txt</url>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>For all code which is used at runtime</comments>
     </license>
   </licenses>
 
-  <scm>
-    <url>https://github.com/io7m/immutables-javaslang</url>
-    <connection>scm:git:https://github.com/io7m/immutables-javaslang</connection>
-    <developerConnection>scm:git:https://github.com/io7m/immutables-javaslang</developerConnection>
-  </scm>
-
-  <developers>
-    <developer>
-      <id>io7m</id>
-      <name>io7m</name>
-      <email>code@io7m.com</email>
-      <url>http://io7m.com</url>
-    </developer>
-  </developers>
-
   <issueManagement>
-    <url>http://github.com/io7m/immutables-javaslang/issues</url>
+    <url>http://github.com/immutables/immutables-javaslang/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -58,7 +54,7 @@
     <site>
       <id>GitHub</id>
       <name>GitHub</name>
-      <url>http://io7m.github.io/immutables-javaslang</url>
+      <url>http://immutables.github.io/</url>
     </site>
     <repository>
       <id>sonatype-nexus-staging</id>
@@ -68,7 +64,7 @@
 
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/io7m/immutables-javaslang</url>
+    <url>https://travis-ci.org/immutables/immutables-javaslang</url>
   </ciManagement>
 
   <prerequisites>
@@ -80,12 +76,12 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.3.9</version>
+        <version>2.3.10</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.3.9</version>
+        <version>2.3.10</version>
       </dependency>
       <dependency>
         <groupId>io.javaslang</groupId>
@@ -100,43 +96,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.9</version>
-        <configuration>
-          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <validate>true</validate>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.19.1</version>
-      </plugin>
-      <plugin>
-        <groupId>com.io7m.changelog</groupId>
-        <artifactId>io7m-changelog-plugin</artifactId>
-        <version>2.1.2</version>
-        <inherited>false</inherited>
-        <configuration>
-          <file>README-CHANGES.xml</file>
-          <feedAuthorEmail>contact@io7m.com</feedAuthorEmail>
-          <feedAuthorName>io7m release robot</feedAuthorName>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <build>
     <pluginManagement>
@@ -189,7 +148,7 @@
           <dependencies>
             <dependency>
               <groupId>${project.groupId}</groupId>
-              <artifactId>immutables-javaslang-checkstyle</artifactId>
+              <artifactId>javaslang-checkstyle</artifactId>
               <version>${project.version}</version>
             </dependency>
           </dependencies>
@@ -198,7 +157,7 @@
               <id>validate</id>
               <phase>process-sources</phase>
               <configuration>
-                <configLocation>com/io7m/immutables/javaslang/checkstyle/checkstyle.xml</configLocation>
+                <configLocation>org/immutables/javaslang/checkstyle/checkstyle.xml</configLocation>
                 <encoding>UTF-8</encoding>
                 <consoleOutput>true</consoleOutput>
                 <failsOnError>true</failsOnError>
@@ -215,22 +174,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>2.6</version>
-        </plugin>
-        <plugin>
-          <groupId>com.io7m.jstructural</groupId>
-          <artifactId>io7m-jstructural-maven-plugin</artifactId>
-          <version>5.0.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>truezip-maven-plugin</artifactId>
-          <version>1.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.2.0</version>
-          <extensions>true</extensions>
         </plugin>
 
         <!-- Require JDK >= 1.8 -->
@@ -258,12 +201,11 @@
                   <manifestEntries>
                     <Specification-Title>${project.name}</Specification-Title>
                     <Specification-Version>${project.version}</Specification-Version>
-                    <Specification-Vendor>io7m.com</Specification-Vendor>
+                    <Specification-Vendor>immutables.org</Specification-Vendor>
                     <Implementation-Title>${project.name}</Implementation-Title>
                     <Implementation-Version>${project.version}</Implementation-Version>
-                    <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                    <Implementation-Vendor>immutables.org</Implementation-Vendor>
                     <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                    <Built-By>io7m</Built-By>
                     <Sealed>true</Sealed>
                   </manifestEntries>
                 </archive>
@@ -283,12 +225,11 @@
                   <manifestEntries>
                     <Specification-Title>${project.name}</Specification-Title>
                     <Specification-Version>${project.version}</Specification-Version>
-                    <Specification-Vendor>io7m.com</Specification-Vendor>
+                    <Specification-Vendor>immutables.org</Specification-Vendor>
                     <Implementation-Title>${project.name}</Implementation-Title>
                     <Implementation-Version>${project.version}</Implementation-Version>
-                    <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                    <Implementation-Vendor>immutables.org</Implementation-Vendor>
                     <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                    <Built-By>io7m</Built-By>
                   </manifestEntries>
                 </archive>
               </configuration>
@@ -339,10 +280,10 @@
                 <manifestEntries>
                   <Specification-Title>${project.name}</Specification-Title>
                   <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>io7m.com</Specification-Vendor>
+                  <Specification-Vendor>immutables.org</Specification-Vendor>
                   <Implementation-Title>${project.name}</Implementation-Title>
                   <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                  <Implementation-Vendor>immutables.org</Implementation-Vendor>
                   <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
                   <Built-By>io7m</Built-By>
                 </manifestEntries>
@@ -364,15 +305,15 @@
               <goal>jar</goal>
             </goals>
             <configuration>
-              <bottom><![CDATA[Copyright &#169; {currentYear} &lt;code@io7m.com&gt; http://io7m.com]]></bottom>
+              <bottom><![CDATA[Copyright &#169; {currentYear} Immutables Authors and Contributors http://immutables.org]]></bottom>
               <archive>
                 <manifestEntries>
                   <Specification-Title>${project.name}</Specification-Title>
                   <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>io7m.com</Specification-Vendor>
+                  <Specification-Vendor>immutables.org</Specification-Vendor>
                   <Implementation-Title>${project.name}</Implementation-Title>
                   <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>io7m.com</Implementation-Vendor>
+                  <Implementation-Vendor>immutables.org</Implementation-Vendor>
                   <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
                   <Built-By>io7m</Built-By>
                 </manifestEntries>
@@ -381,37 +322,16 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- Produce OSGi bundle -->
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Export-Package>com.io7m.jproperties</Export-Package>
-            <Specification-Title>${project.name}</Specification-Title>
-            <Specification-Version>${project.version}</Specification-Version>
-            <Specification-Vendor>io7m.com</Specification-Vendor>
-            <Implementation-Title>${project.name}</Implementation-Title>
-            <Implementation-Version>${project.version}</Implementation-Version>
-            <Implementation-Vendor>io7m.com</Implementation-Vendor>
-            <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-            <Built-By>io7m</Built-By>
-            <Sealed>true</Sealed>
-          </instructions>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
-  <!-- Sign artifacts when deploying to io7m -->
+  <!-- Optionally sign artifacts -->
   <profiles>
     <profile>
-      <id>io7m-deployment-private</id>
+      <id>immutables.deployment</id>
       <activation>
         <property>
-          <name>io7m.deployment</name>
+          <name>immutables.deployment</name>
         </property>
       </activation>
       <build>

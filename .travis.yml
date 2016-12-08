@@ -1,0 +1,18 @@
+env:
+  _JAVA_OPTIONS="-Xms1G -Xmx4G"
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
+install:
+
+script:
+  - mvn clean package
+
