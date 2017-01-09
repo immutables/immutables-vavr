@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:changelog xmlns:c="http://schemas.io7m.com/changelog/2.0.0">
+  <c:project>immutables-javaslang</c:project>
+
+  <c:release c:ticket-system="com.github.immutables.javaslang">
+    <c:date>2017-01-09</c:date>
+    <c:version>0.2.0</c:version>
+    <c:item>
+      <c:date>2017-01-09</c:date>
+      <c:type-code-fix/>
+      <c:ticket>3</c:ticket>
+      <c:summary>Fix a compilation error in generated code by using immutables 2.4.0.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release c:ticket-system="com.github.immutables.javaslang">
+    <c:date>2016-12-08</c:date>
+    <c:version>0.1.0</c:version>
+    <c:item>
+      <c:date>2016-12-08</c:date>
+      <c:type-code-new/>
+      <c:summary>Initial release.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:ticket-system xml:id="com.github.immutables.javaslang">
+    <c:ticket-url>https://github.com/immutables/immutables-javaslang/issues/</c:ticket-url>
+  </c:ticket-system>
+
+</c:changelog>

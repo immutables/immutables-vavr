@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.javaslang</groupId>
   <artifactId>javaslang</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 
   <packaging>pom</packaging>
   <name>javaslang</name>
@@ -30,6 +30,15 @@
     <connection>scm:git:https://github.com/immutables/immutables-javaslang</connection>
     <developerConnection>scm:git:https://github.com/immutables/immutables-javaslang</developerConnection>
   </scm>
+
+  <developers>
+    <developer>
+      <id>io7m</id>
+      <name>io7m</name>
+      <email>code@io7m.com</email>
+      <url>http://io7m.com</url>
+    </developer>
+  </developers>
 
   <organization>
     <name>The Immutables.org authors</name>
@@ -76,17 +85,17 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.3.10</version>
+        <version>2.4.0</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.3.10</version>
+        <version>2.4.0</version>
       </dependency>
       <dependency>
         <groupId>io.javaslang</groupId>
         <artifactId>javaslang</artifactId>
-        <version>2.0.5</version>
+        <version>2.1.0-alpha</version>
       </dependency>
 
       <dependency>
