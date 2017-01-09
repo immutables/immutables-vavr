@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.javaslang</groupId>
   <artifactId>javaslang</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>javaslang</name>
@@ -85,17 +85,17 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.3.10</version>
+        <version>2.4.0</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.3.10</version>
+        <version>2.4.0</version>
       </dependency>
       <dependency>
         <groupId>io.javaslang</groupId>
         <artifactId>javaslang</artifactId>
-        <version>2.0.5</version>
+        <version>2.1.0-alpha</version>
       </dependency>
 
       <dependency>
