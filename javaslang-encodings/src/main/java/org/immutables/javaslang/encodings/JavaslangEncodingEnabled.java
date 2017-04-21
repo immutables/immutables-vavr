@@ -30,6 +30,7 @@ package org.immutables.javaslang.encodings;
 @JavaslangLinkedHashSetEncodingEnabled
 @JavaslangListEncodingEnabled
 @JavaslangMapEncodingEnabled
+@JavaslangMultimapEncodingEnabled
 @JavaslangOptionEncodingEnabled
 @JavaslangQueueEncodingEnabled
 @JavaslangSeqEncodingEnabled
