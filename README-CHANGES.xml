@@ -3,6 +3,17 @@
   <c:project>immutables-javaslang</c:project>
 
   <c:release c:ticket-system="com.github.immutables.javaslang">
+    <c:date>2017-04-21</c:date>
+    <c:version>0.2.1</c:version>
+    <c:item>
+      <c:date>2017-04-21</c:date>
+      <c:type-code-fix/>
+      <c:ticket>6</c:ticket>
+      <c:summary>Add a missing Multimap encoding.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release c:ticket-system="com.github.immutables.javaslang">
     <c:date>2017-01-09</c:date>
     <c:version>0.2.0</c:version>
     <c:item>
