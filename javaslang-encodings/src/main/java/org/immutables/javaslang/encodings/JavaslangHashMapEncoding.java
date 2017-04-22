@@ -42,7 +42,7 @@ class JavaslangHashMapEncoding<K, V>
 
     }
 
-    @Encoding.Naming(value = "put*", depluralize = true)
+    @Encoding.Naming(standard = Encoding.StandardNaming.PUT)
     @Encoding.Init
     void put(
       final K key,
