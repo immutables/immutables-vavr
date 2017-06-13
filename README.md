@@ -3,7 +3,7 @@ immutables-vavr
 
 [![Build Status](https://travis-ci.org/immutables/immutables-vavr.svg)](https://travis-ci.org/immutables/immutables-vavr)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.immutables.vavr/vavr/badge.png)](https://maven-badges.herokuapp.com/maven-central/org.immutables.vavr/vavr)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc5eddb214a34815be5b01df4a3b2493)](https://www.codacy.com/app/github_79/immutables-vavr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=immutables/immutables-vavr&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/98691df562e44db69bcace5ee9913855)](https://www.codacy.com/app/github_79/immutables-vavr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=immutables/immutables-vavr&amp;utm_campaign=Badge_Grade)
 
 A set of [Immutables](http://immutables.org) encodings for [Vavr](http://vavr.io).
 
