@@ -25,7 +25,7 @@ import org.immutables.encode.Encoding;
 class VavrHashMapEncoding<K, V>
 {
   @Encoding.Impl
-  private HashMap<K, V> field;
+  private HashMap<K, V> field = HashMap.empty();
 
   VavrHashMapEncoding()
   {

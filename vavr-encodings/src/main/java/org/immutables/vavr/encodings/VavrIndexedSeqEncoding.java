@@ -18,13 +18,14 @@ package org.immutables.vavr.encodings;
 
 import io.vavr.collection.Array;
 import io.vavr.collection.IndexedSeq;
+import io.vavr.collection.Vector;
 import org.immutables.encode.Encoding;
 
 @Encoding
 class VavrIndexedSeqEncoding<T>
 {
   @Encoding.Impl
-  private IndexedSeq<T> field;
+  private IndexedSeq<T> field = Vector.empty();
 
   VavrIndexedSeqEncoding()
   {

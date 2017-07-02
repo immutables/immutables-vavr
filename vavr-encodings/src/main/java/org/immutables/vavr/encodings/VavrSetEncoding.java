@@ -24,7 +24,7 @@ import org.immutables.encode.Encoding;
 class VavrSetEncoding<T>
 {
   @Encoding.Impl
-  private Set<T> field;
+  private Set<T> field = HashSet.empty();
 
   VavrSetEncoding()
   {

@@ -27,21 +27,23 @@ class VavrOptionEncoding<T>
   @Encoding.Impl
   private Option<T> field = Option.none();
 
+  VavrOptionEncoding()
+  {
+
+  }
+
   @Encoding.Copy
   public Option<T> withOption(
-    final Option<T> value) {
+    final Option<T> value)
+  {
     return Objects.requireNonNull(value);
   }
 
   @Encoding.Copy
   public Option<T> with(
-    final T value) {
-    return Option.some(value);
-  }
-
-  VavrOptionEncoding()
+    final T value)
   {
-
+    return Option.some(value);
   }
 
   @Encoding.Builder

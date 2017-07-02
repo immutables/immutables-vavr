@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrCharSeqEncoding
 {
   @Encoding.Impl
-  private CharSeq field;
+  private CharSeq field = CharSeq.empty();
 
   VavrCharSeqEncoding()
   {

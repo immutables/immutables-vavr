@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrListEncoding<T>
 {
   @Encoding.Impl
-  private List<T> field;
+  private List<T> field = List.empty();
 
   VavrListEncoding()
   {

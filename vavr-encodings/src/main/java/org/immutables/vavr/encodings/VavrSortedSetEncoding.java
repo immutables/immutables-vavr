@@ -21,10 +21,10 @@ import io.vavr.collection.TreeSet;
 import org.immutables.encode.Encoding;
 
 @Encoding
-class VavrSortedSetEncoding<T>
+class VavrSortedSetEncoding<T extends Comparable<T>>
 {
   @Encoding.Impl
-  private SortedSet<T> field;
+  private SortedSet<T> field = TreeSet.empty();
 
   VavrSortedSetEncoding()
   {

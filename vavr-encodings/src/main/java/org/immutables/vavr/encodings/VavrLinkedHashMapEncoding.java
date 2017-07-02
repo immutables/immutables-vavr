@@ -25,7 +25,7 @@ import org.immutables.encode.Encoding;
 class VavrLinkedHashMapEncoding<K, V>
 {
   @Encoding.Impl
-  private LinkedHashMap<K, V> field;
+  private LinkedHashMap<K, V> field = LinkedHashMap.empty();
 
   VavrLinkedHashMapEncoding()
   {

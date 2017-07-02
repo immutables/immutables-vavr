@@ -23,10 +23,10 @@ import io.vavr.collection.TreeMap;
 import org.immutables.encode.Encoding;
 
 @Encoding
-class VavrSortedMapEncoding<K, V>
+class VavrSortedMapEncoding<K extends Comparable<K>, V>
 {
   @Encoding.Impl
-  private SortedMap<K, V> field;
+  private SortedMap<K, V> field = TreeMap.empty();
 
   VavrSortedMapEncoding()
   {

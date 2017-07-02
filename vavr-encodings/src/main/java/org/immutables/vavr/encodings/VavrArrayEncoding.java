@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrArrayEncoding<T>
 {
   @Encoding.Impl
-  private Array<T> field;
+  private Array<T> field = Array.empty();
 
   VavrArrayEncoding()
   {

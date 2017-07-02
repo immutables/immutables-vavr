@@ -20,10 +20,10 @@ import io.vavr.collection.TreeSet;
 import org.immutables.encode.Encoding;
 
 @Encoding
-class VavrTreeSetEncoding<T>
+class VavrTreeSetEncoding<T extends Comparable<T>>
 {
   @Encoding.Impl
-  private TreeSet<T> field;
+  private TreeSet<T> field = TreeSet.empty();
 
   VavrTreeSetEncoding()
   {

@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrHashSetEncoding<T>
 {
   @Encoding.Impl
-  private HashSet<T> field;
+  private HashSet<T> field = HashSet.empty();
 
   VavrHashSetEncoding()
   {

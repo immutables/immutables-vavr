@@ -22,10 +22,10 @@ import io.vavr.collection.TreeMap;
 import org.immutables.encode.Encoding;
 
 @Encoding
-class VavrTreeMapEncoding<K, V>
+class VavrTreeMapEncoding<K extends Comparable<K>, V>
 {
   @Encoding.Impl
-  private TreeMap<K, V> field;
+  private TreeMap<K, V> field = TreeMap.empty();
 
   VavrTreeMapEncoding()
   {

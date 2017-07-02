@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrVectorEncoding<T>
 {
   @Encoding.Impl
-  private Vector<T> field;
+  private Vector<T> field = Vector.empty();
 
   VavrVectorEncoding()
   {

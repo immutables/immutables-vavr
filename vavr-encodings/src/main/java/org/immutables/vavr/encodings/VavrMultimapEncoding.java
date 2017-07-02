@@ -26,7 +26,7 @@ import org.immutables.encode.Encoding;
 class VavrMultimapEncoding<K, V>
 {
   @Encoding.Impl
-  private Multimap<K, V> field;
+  private Multimap<K, V> field = HashMultimap.withSet().empty();
 
   VavrMultimapEncoding()
   {

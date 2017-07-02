@@ -23,7 +23,7 @@ import org.immutables.encode.Encoding;
 class VavrQueueEncoding<T>
 {
   @Encoding.Impl
-  private Queue<T> field;
+  private Queue<T> field = Queue.empty();
 
   VavrQueueEncoding()
   {

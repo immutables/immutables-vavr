@@ -24,7 +24,7 @@ import org.immutables.encode.Encoding;
 class VavrSeqEncoding<T>
 {
   @Encoding.Impl
-  private Seq<T> field;
+  private Seq<T> field = Array.empty();
 
   VavrSeqEncoding()
   {
