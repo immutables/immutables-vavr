@@ -3,13 +3,19 @@
   <c:project>immutables-vavr</c:project>
 
   <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2017-06-13</c:date>
+    <c:date>2017-07-02</c:date>
     <c:version>0.4.0</c:version>
     <c:item>
       <c:date>2017-06-13</c:date>
       <c:type-code-change/>
       <c:ticket>5</c:ticket>
       <c:summary>Rename project to immutables-vavr and target Vavr 0.9.0.</c:summary>
+    </c:item>
+    <c:item>
+      <c:date>2017-07-02</c:date>
+      <c:type-code-fix/>
+      <c:ticket>8</c:ticket>
+      <c:summary>Provide default field values to fix Jackson serialization.</c:summary>
     </c:item>
   </c:release>
 

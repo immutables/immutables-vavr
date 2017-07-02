@@ -17,14 +17,16 @@
 package org.immutables.vavr.encodings;
 
 import io.vavr.collection.HashSet;
+import io.vavr.collection.LinkedHashSet;
 import io.vavr.collection.Set;
 import org.immutables.encode.Encoding;
 
 @Encoding
 class VavrSetEncoding<T>
 {
+  // Using a linked variant provides more predictable semantics for serialization
   @Encoding.Impl
-  private Set<T> field = HashSet.empty();
+  private Set<T> field = LinkedHashSet.empty();
 
   VavrSetEncoding()
   {
