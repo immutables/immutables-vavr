@@ -19,11 +19,25 @@ package org.immutables.vavr.encodings;
 import io.vavr.control.Option;
 import org.immutables.encode.Encoding;
 
+import java.util.Objects;
+
 @Encoding
 class VavrOptionEncoding<T>
 {
   @Encoding.Impl
-  private Option<T> field;
+  private Option<T> field = Option.none();
+
+  @Encoding.Copy
+  public Option<T> withOption(
+    final Option<T> value) {
+    return Objects.requireNonNull(value);
+  }
+
+  @Encoding.Copy
+  public Option<T> with(
+    final T value) {
+    return Option.some(value);
+  }
 
   VavrOptionEncoding()
   {
