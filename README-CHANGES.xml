@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <c:changelog xmlns:c="http://schemas.io7m.com/changelog/2.0.0">
-  <c:project>immutables-javaslang</c:project>
+  <c:project>immutables-vavr</c:project>
 
-  <c:release c:ticket-system="com.github.immutables.javaslang">
+  <c:release c:ticket-system="com.github.immutables.vavr">
+    <c:date>2017-07-02</c:date>
+    <c:version>0.4.0</c:version>
+    <c:item>
+      <c:date>2017-06-13</c:date>
+      <c:type-code-change/>
+      <c:ticket>5</c:ticket>
+      <c:summary>Rename project to immutables-vavr and target Vavr 0.9.0.</c:summary>
+    </c:item>
+    <c:item>
+      <c:date>2017-07-02</c:date>
+      <c:type-code-fix/>
+      <c:ticket>8</c:ticket>
+      <c:summary>Provide default field values to fix Jackson serialization.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release c:ticket-system="com.github.immutables.vavr">
     <c:date>2017-04-22</c:date>
     <c:version>0.3.0</c:version>
     <c:item>
@@ -18,7 +35,7 @@
     </c:item>
   </c:release>
 
-  <c:release c:ticket-system="com.github.immutables.javaslang">
+  <c:release c:ticket-system="com.github.immutables.vavr">
     <c:date>2017-04-21</c:date>
     <c:version>0.2.1</c:version>
     <c:item>
@@ -29,7 +46,7 @@
     </c:item>
   </c:release>
 
-  <c:release c:ticket-system="com.github.immutables.javaslang">
+  <c:release c:ticket-system="com.github.immutables.vavr">
     <c:date>2017-01-09</c:date>
     <c:version>0.2.0</c:version>
     <c:item>
@@ -40,7 +57,7 @@
     </c:item>
   </c:release>
 
-  <c:release c:ticket-system="com.github.immutables.javaslang">
+  <c:release c:ticket-system="com.github.immutables.vavr">
     <c:date>2016-12-08</c:date>
     <c:version>0.1.0</c:version>
     <c:item>
@@ -50,8 +67,8 @@
     </c:item>
   </c:release>
 
-  <c:ticket-system xml:id="com.github.immutables.javaslang">
-    <c:ticket-url>https://github.com/immutables/immutables-javaslang/issues/</c:ticket-url>
+  <c:ticket-system xml:id="com.github.immutables.vavr">
+    <c:ticket-url>https://github.com/immutables/immutables-vavr/issues/</c:ticket-url>
   </c:ticket-system>
 
 </c:changelog>

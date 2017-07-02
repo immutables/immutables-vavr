@@ -5,19 +5,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.immutables.javaslang</groupId>
-  <artifactId>javaslang</artifactId>
-  <version>0.3.0</version>
+  <groupId>org.immutables.vavr</groupId>
+  <artifactId>vavr</artifactId>
+  <version>0.4.0</version>
 
   <packaging>pom</packaging>
-  <name>javaslang</name>
-  <description>Immutables.org encodings for Javaslang</description>
-  <url>http://github.com/immutables/immutables-javaslang</url>
+  <name>vavr</name>
+  <description>Immutables.org encodings for Vavr</description>
+  <url>http://github.com/immutables/immutables-vavr</url>
 
   <modules>
-    <module>javaslang-checkstyle</module>
-    <module>javaslang-encodings</module>
-    <module>javaslang-examples</module>
+    <module>vavr-checkstyle</module>
+    <module>vavr-encodings</module>
+    <module>vavr-examples</module>
   </modules>
 
   <properties>
@@ -26,9 +26,9 @@
   </properties>
 
   <scm>
-    <url>https://github.com/immutables/immutables-javaslang</url>
-    <connection>scm:git:https://github.com/immutables/immutables-javaslang</connection>
-    <developerConnection>scm:git:https://github.com/immutables/immutables-javaslang</developerConnection>
+    <url>https://github.com/immutables/immutables-vavr</url>
+    <connection>scm:git:https://github.com/immutables/immutables-vavr</connection>
+    <developerConnection>scm:git:https://github.com/immutables/immutables-vavr</developerConnection>
   </scm>
 
   <developers>
@@ -55,7 +55,7 @@
   </licenses>
 
   <issueManagement>
-    <url>http://github.com/immutables/immutables-javaslang/issues</url>
+    <url>http://github.com/immutables/immutables-vavr/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -69,11 +69,15 @@
       <id>sonatype-nexus-staging</id>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/immutables/immutables-javaslang</url>
+    <url>https://travis-ci.org/immutables/immutables-vavr</url>
   </ciManagement>
 
   <prerequisites>
@@ -85,17 +89,17 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.4.0</version>
+        <version>2.5.3</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.4.0</version>
+        <version>2.5.3</version>
       </dependency>
       <dependency>
-        <groupId>io.javaslang</groupId>
-        <artifactId>javaslang</artifactId>
-        <version>2.1.0-alpha</version>
+        <groupId>io.vavr</groupId>
+        <artifactId>vavr</artifactId>
+        <version>0.9.0</version>
       </dependency>
 
       <dependency>
@@ -157,7 +161,7 @@
           <dependencies>
             <dependency>
               <groupId>${project.groupId}</groupId>
-              <artifactId>javaslang-checkstyle</artifactId>
+              <artifactId>vavr-checkstyle</artifactId>
               <version>${project.version}</version>
             </dependency>
           </dependencies>
@@ -166,7 +170,7 @@
               <id>validate</id>
               <phase>process-sources</phase>
               <configuration>
-                <configLocation>org/immutables/javaslang/checkstyle/checkstyle.xml</configLocation>
+                <configLocation>org/immutables/vavr/checkstyle/checkstyle.xml</configLocation>
                 <encoding>UTF-8</encoding>
                 <consoleOutput>true</consoleOutput>
                 <failsOnError>true</failsOnError>
