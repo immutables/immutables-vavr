@@ -18,14 +18,16 @@ package org.immutables.vavr.encodings;
 
 import io.vavr.Tuple2;
 import io.vavr.collection.HashMap;
+import io.vavr.collection.LinkedHashMap;
 import io.vavr.collection.Map;
 import org.immutables.encode.Encoding;
 
 @Encoding
 class VavrMapEncoding<K, V>
 {
+  // Using a linked variant provides more predictable semantics for serialization
   @Encoding.Impl
-  private Map<K, V> field = HashMap.empty();
+  private Map<K, V> field = LinkedHashMap.empty();
 
   VavrMapEncoding()
   {

@@ -19,14 +19,16 @@ package org.immutables.vavr.encodings;
 import io.vavr.Tuple2;
 import io.vavr.collection.HashMap;
 import io.vavr.collection.HashMultimap;
+import io.vavr.collection.LinkedHashMultimap;
 import io.vavr.collection.Multimap;
 import org.immutables.encode.Encoding;
 
 @Encoding
 class VavrMultimapEncoding<K, V>
 {
+  // Using a linked variant provides more predictable semantics for serialization
   @Encoding.Impl
-  private Multimap<K, V> field = HashMultimap.withSet().empty();
+  private Multimap<K, V> field = LinkedHashMultimap.withSet().empty();
 
   VavrMultimapEncoding()
   {
