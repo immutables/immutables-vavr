@@ -17,6 +17,7 @@
 package org.immutables.vavr.encodings;
 
 import io.vavr.collection.Array;
+import io.vavr.collection.HashSet;
 import io.vavr.collection.IndexedSeq;
 import io.vavr.collection.Vector;
 import org.immutables.encode.Encoding;
@@ -48,6 +49,15 @@ class VavrIndexedSeqEncoding<T>
       final T element)
     {
       this.indexed_seq = this.indexed_seq.append(element);
+    }
+
+    @SafeVarargs
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
+    @Encoding.Init
+    final void addVarArgs(
+            final T... elements)
+    {
+      this.indexed_seq = this.indexed_seq.appendAll(HashSet.of(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
