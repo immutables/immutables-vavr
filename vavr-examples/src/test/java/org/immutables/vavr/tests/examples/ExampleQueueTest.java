@@ -47,6 +47,27 @@ public final class ExampleQueueTest
   }
 
   @Test
+  public void testPushVarArgs()
+  {
+    final ImmutableExampleQueueType.Builder b =
+            ImmutableExampleQueueType.builder();
+
+    b.enqueueIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2));
+
+    final ImmutableExampleQueueType a0 = b.build();
+
+    final Tuple2<Integer, ? extends Queue<Integer>> p0 = a0.integers().dequeue();
+    Assert.assertEquals(Integer.valueOf(0), p0._1);
+    final Tuple2<Integer, ? extends Queue<Integer>> p1 = p0._2.dequeue();
+    Assert.assertEquals(Integer.valueOf(1), p1._1);
+    final Tuple2<Integer, ? extends Queue<Integer>> p2 = p1._2.dequeue();
+    Assert.assertEquals(Integer.valueOf(2), p2._1);
+    Assert.assertTrue(p2._2.isEmpty());
+  }
+  @Test
   public void testPushAll()
   {
     final ImmutableExampleQueueType.Builder b =
