@@ -40,6 +40,23 @@ public final class ExampleLinearSeqTest
   }
 
   @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleLinearSeqType.Builder b =
+            ImmutableExampleLinearSeqType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2));
+
+    final ImmutableExampleLinearSeqType a0 = b.build();
+    Assert.assertEquals(0L, a0.integers().get(0).longValue());
+    Assert.assertEquals(1L, a0.integers().get(1).longValue());
+    Assert.assertEquals(2L, a0.integers().get(2).longValue());
+  }
+
+  @Test
   public void testAddAll()
   {
     final ImmutableExampleLinearSeqType.Builder b =
