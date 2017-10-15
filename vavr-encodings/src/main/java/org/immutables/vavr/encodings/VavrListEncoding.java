@@ -16,6 +16,7 @@
 
 package org.immutables.vavr.encodings;
 
+import io.vavr.collection.HashSet;
 import io.vavr.collection.List;
 import org.immutables.encode.Encoding;
 
@@ -46,6 +47,15 @@ class VavrListEncoding<T>
       final T element)
     {
       this.list = this.list.append(element);
+    }
+
+    @SafeVarargs
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
+    @Encoding.Init
+    final void addVarArgs(
+            final T... elements)
+    {
+      this.list = this.list.appendAll(HashSet.of(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
