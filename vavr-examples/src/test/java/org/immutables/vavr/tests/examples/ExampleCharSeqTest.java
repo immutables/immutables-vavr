@@ -40,6 +40,23 @@ public final class ExampleCharSeqTest
   }
 
   @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleCharSeqType.Builder b =
+            ImmutableExampleCharSeqType.builder();
+
+    b.addText(
+            Character.valueOf('a'),
+            Character.valueOf('b'),
+            Character.valueOf('c'));
+
+    final ImmutableExampleCharSeqType a0 = b.build();
+    Assert.assertEquals((long) 'a', (long) a0.text().get(0).charValue());
+    Assert.assertEquals((long) 'b', (long) a0.text().get(1).charValue());
+    Assert.assertEquals((long) 'c', (long) a0.text().get(2).charValue());
+  }
+
+  @Test
   public void testAddAll()
   {
     final ImmutableExampleCharSeqType.Builder b =
