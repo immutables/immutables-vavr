@@ -18,6 +18,7 @@ package org.immutables.vavr.tests.examples;
 
 import io.vavr.collection.Array;
 import org.immutables.vavr.examples.ImmutableExampleArrayType;
+import org.immutables.vavr.examples.ImmutableExampleSetType;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -37,6 +38,24 @@ public final class ExampleArrayTest
     Assert.assertEquals(0L, a0.integers().get(0).longValue());
     Assert.assertEquals(1L, a0.integers().get(1).longValue());
     Assert.assertEquals(2L, a0.integers().get(2).longValue());
+  }
+
+  @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleArrayType.Builder b =
+            ImmutableExampleArrayType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2));
+
+    final ImmutableExampleArrayType a0 = b.build();
+    Assert.assertEquals(3L, (long) a0.integers().size());
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(2)));
   }
 
   @Test
