@@ -42,6 +42,24 @@ public final class ExampleSetTest
   }
 
   @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2));
+
+    final ImmutableExampleSetType a0 = b.build();
+    Assert.assertEquals(3L, (long) a0.integers().size());
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(2)));
+  }
+
+  @Test
   public void testSet()
   {
     final ImmutableExampleSetType.Builder b =
