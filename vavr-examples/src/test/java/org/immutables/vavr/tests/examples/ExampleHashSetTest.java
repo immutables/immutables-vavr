@@ -18,7 +18,6 @@ package org.immutables.vavr.tests.examples;
 
 import io.vavr.collection.HashSet;
 import org.immutables.vavr.examples.ImmutableExampleHashSetType;
-import org.immutables.vavr.examples.ImmutableExampleSetType;
 import org.junit.Assert;
 import org.junit.Test;
 

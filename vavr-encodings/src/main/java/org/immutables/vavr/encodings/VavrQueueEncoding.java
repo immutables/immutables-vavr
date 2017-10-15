@@ -53,7 +53,7 @@ class VavrQueueEncoding<T>
     @SafeVarargs
     @Encoding.Naming(value = "enqueue*", depluralize = true)
     @Encoding.Init
-    final void enqueuedVarArgs(
+    final void enqueueVarArgs(
             final T... elements)
     {
       this.queue = this.queue.appendAll(HashSet.of(elements));

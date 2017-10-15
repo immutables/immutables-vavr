@@ -18,7 +18,6 @@ package org.immutables.vavr.tests.examples;
 
 import io.vavr.collection.TreeSet;
 
-import org.immutables.vavr.examples.ImmutableExampleSetType;
 import org.immutables.vavr.examples.ImmutableExampleTreeSetType;
 import org.junit.Assert;
 import org.junit.Test;
