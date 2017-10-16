@@ -55,6 +55,7 @@ public final class ExampleQueueTest
     b.enqueueIntegers(
             Integer.valueOf(0),
             Integer.valueOf(1),
+            Integer.valueOf(0), // add a duplicate
             Integer.valueOf(2));
 
     final ImmutableExampleQueueType a0 = b.build();
@@ -64,8 +65,10 @@ public final class ExampleQueueTest
     final Tuple2<Integer, ? extends Queue<Integer>> p1 = p0._2.dequeue();
     Assert.assertEquals(Integer.valueOf(1), p1._1);
     final Tuple2<Integer, ? extends Queue<Integer>> p2 = p1._2.dequeue();
-    Assert.assertEquals(Integer.valueOf(2), p2._1);
-    Assert.assertTrue(p2._2.isEmpty());
+    Assert.assertEquals(Integer.valueOf(0), p2._1);
+    final Tuple2<Integer, ? extends Queue<Integer>> p3 = p2._2.dequeue();
+    Assert.assertEquals(Integer.valueOf(2), p3._1);
+    Assert.assertTrue(p3._2.isEmpty());
   }
   @Test
   public void testPushAll()

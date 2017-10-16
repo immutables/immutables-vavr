@@ -48,12 +48,14 @@ public final class ExampleCharSeqTest
     b.addText(
             Character.valueOf('a'),
             Character.valueOf('b'),
+            Character.valueOf('a'), // add a duplicate
             Character.valueOf('c'));
 
     final ImmutableExampleCharSeqType a0 = b.build();
     Assert.assertEquals((long) 'a', (long) a0.text().get(0).charValue());
     Assert.assertEquals((long) 'b', (long) a0.text().get(1).charValue());
-    Assert.assertEquals((long) 'c', (long) a0.text().get(2).charValue());
+    Assert.assertEquals((long) 'a', (long) a0.text().get(2).charValue());
+    Assert.assertEquals((long) 'c', (long) a0.text().get(3).charValue());
   }
 
   @Test

@@ -50,6 +50,7 @@ public final class ExampleSetTest
     b.addIntegers(
             Integer.valueOf(0),
             Integer.valueOf(1),
+            Integer.valueOf(0), // add duplicate
             Integer.valueOf(2));
 
     final ImmutableExampleSetType a0 = b.build();

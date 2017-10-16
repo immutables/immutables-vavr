@@ -48,12 +48,14 @@ public final class ExampleSeqTest
     b.addIntegers(
             Integer.valueOf(0),
             Integer.valueOf(1),
+            Integer.valueOf(0), // add a duplicate
             Integer.valueOf(2));
 
     final ImmutableExampleSeqType a0 = b.build();
     Assert.assertEquals(0L, a0.integers().get(0).longValue());
     Assert.assertEquals(1L, a0.integers().get(1).longValue());
-    Assert.assertEquals(2L, a0.integers().get(2).longValue());
+    Assert.assertEquals(0L, a0.integers().get(2).longValue());
+    Assert.assertEquals(2L, a0.integers().get(3).longValue());
   }
 
   @Test

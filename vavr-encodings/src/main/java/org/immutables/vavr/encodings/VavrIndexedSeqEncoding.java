@@ -17,10 +17,11 @@
 package org.immutables.vavr.encodings;
 
 import io.vavr.collection.Array;
-import io.vavr.collection.HashSet;
 import io.vavr.collection.IndexedSeq;
 import io.vavr.collection.Vector;
 import org.immutables.encode.Encoding;
+
+import java.util.Arrays;
 
 @Encoding
 class VavrIndexedSeqEncoding<T>
@@ -57,7 +58,7 @@ class VavrIndexedSeqEncoding<T>
     final void addVarArgs(
             final T... elements)
     {
-      this.indexed_seq = this.indexed_seq.appendAll(HashSet.of(elements));
+      this.indexed_seq = this.indexed_seq.appendAll(Arrays.asList(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)

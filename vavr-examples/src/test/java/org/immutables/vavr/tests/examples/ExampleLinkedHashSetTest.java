@@ -49,6 +49,7 @@ public final class ExampleLinkedHashSetTest
     b.addIntegers(
             Integer.valueOf(0),
             Integer.valueOf(1),
+            Integer.valueOf(0), // add duplicate
             Integer.valueOf(2));
 
     final ImmutableExampleLinkedHashSetType a0 = b.build();

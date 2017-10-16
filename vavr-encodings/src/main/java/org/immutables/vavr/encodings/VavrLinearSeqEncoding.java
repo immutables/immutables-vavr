@@ -16,10 +16,11 @@
 
 package org.immutables.vavr.encodings;
 
-import io.vavr.collection.HashSet;
 import io.vavr.collection.LinearSeq;
 import io.vavr.collection.List;
 import org.immutables.encode.Encoding;
+
+import java.util.Arrays;
 
 @Encoding
 class VavrLinearSeqEncoding<T>
@@ -56,7 +57,7 @@ class VavrLinearSeqEncoding<T>
     final void addVarArgs(
             final T... elements)
     {
-      this.linear_seq = this.linear_seq.appendAll(HashSet.of(elements));
+      this.linear_seq = this.linear_seq.appendAll(Arrays.asList(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
