@@ -16,9 +16,11 @@
 
 package org.immutables.vavr.encodings;
 
-import io.vavr.collection.HashSet;
-import io.vavr.collection.LinkedHashSet;
 import org.immutables.encode.Encoding;
+
+import java.util.Arrays;
+
+import io.vavr.collection.LinkedHashSet;
 
 @Encoding
 class VavrLinkedHashSetEncoding<T>
@@ -55,7 +57,7 @@ class VavrLinkedHashSetEncoding<T>
     final void addVarArgs(
             final T... elements)
     {
-      this.set = this.set.addAll(HashSet.of(elements));
+      this.set = this.set.addAll(Arrays.asList(elements));
     }
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
     @Encoding.Init
