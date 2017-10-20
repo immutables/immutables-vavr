@@ -20,6 +20,8 @@ import io.vavr.collection.LinearSeq;
 import io.vavr.collection.List;
 import org.immutables.encode.Encoding;
 
+import java.util.Arrays;
+
 @Encoding
 class VavrLinearSeqEncoding<T>
 {
@@ -47,6 +49,15 @@ class VavrLinearSeqEncoding<T>
       final T element)
     {
       this.linear_seq = this.linear_seq.append(element);
+    }
+
+    @SafeVarargs
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
+    @Encoding.Init
+    final void addVarArgs(
+            final T... elements)
+    {
+      this.linear_seq = this.linear_seq.appendAll(Arrays.asList(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)

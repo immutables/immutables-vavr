@@ -27,7 +27,7 @@ public final class ExampleVectorTest
   public void testAdd()
   {
     final ImmutableExampleVectorType.Builder b =
-      ImmutableExampleVectorType.builder();
+            ImmutableExampleVectorType.builder();
 
     b.addIntegers(Integer.valueOf(0));
     b.addIntegers(Integer.valueOf(1));
@@ -37,6 +37,25 @@ public final class ExampleVectorTest
     Assert.assertEquals(0L, a0.integers().get(0).longValue());
     Assert.assertEquals(1L, a0.integers().get(1).longValue());
     Assert.assertEquals(2L, a0.integers().get(2).longValue());
+  }
+
+  @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleVectorType.Builder b =
+            ImmutableExampleVectorType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(0), // add a duplicate
+            Integer.valueOf(2));
+
+    final ImmutableExampleVectorType a0 = b.build();
+    Assert.assertEquals(0L, a0.integers().get(0).longValue());
+    Assert.assertEquals(1L, a0.integers().get(1).longValue());
+    Assert.assertEquals(0L, a0.integers().get(2).longValue());
+    Assert.assertEquals(2L, a0.integers().get(3).longValue());
   }
 
   @Test

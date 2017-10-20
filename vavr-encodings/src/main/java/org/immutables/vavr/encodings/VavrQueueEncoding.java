@@ -19,6 +19,8 @@ package org.immutables.vavr.encodings;
 import io.vavr.collection.Queue;
 import org.immutables.encode.Encoding;
 
+import java.util.Arrays;
+
 @Encoding
 class VavrQueueEncoding<T>
 {
@@ -46,6 +48,16 @@ class VavrQueueEncoding<T>
       final T element)
     {
       this.queue = this.queue.enqueue(element);
+    }
+
+
+    @SafeVarargs
+    @Encoding.Naming(value = "enqueue*", depluralize = true)
+    @Encoding.Init
+    final void enqueueVarArgs(
+            final T... elements)
+    {
+      this.queue = this.queue.appendAll(Arrays.asList(elements));
     }
 
     @Encoding.Naming(value = "enqueueAll*", depluralize = true)
