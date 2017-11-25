@@ -23,6 +23,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <org.immutables.version>2.6.0-alpha2</org.immutables.version>
   </properties>
 
   <scm>
@@ -96,12 +97,12 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.6.0-alpha2</version>
+        <version>${org.immutables.version}</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.6.0-alpha2</version>
+        <version>${org.immutables.version}</version>
       </dependency>
       <dependency>
         <groupId>io.vavr</groupId>
@@ -171,6 +172,11 @@
               <artifactId>vavr-checkstyle</artifactId>
               <version>${project.version}</version>
             </dependency>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>8.4</version>
+            </dependency>
           </dependencies>
           <executions>
             <execution>
@@ -203,7 +209,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>3.7.0</version>
 
           <executions>
             <!--
