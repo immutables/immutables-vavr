@@ -34,11 +34,18 @@
   <developers>
     <developer>
       <id>io7m</id>
-      <name>io7m</name>
+      <name>Mark Raynsford</name>
       <email>code@io7m.com</email>
       <url>http://io7m.com</url>
     </developer>
   </developers>
+
+  <contributors>
+    <contributor>
+      <name>TMTron</name>
+      <url>https://github.com/tmtron</url>
+    </contributor>
+  </contributors>
 
   <organization>
     <name>The Immutables.org authors</name>
@@ -81,7 +88,7 @@
   </ciManagement>
 
   <prerequisites>
-    <maven>3.0.4</maven>
+    <maven>3.5.0</maven>
   </prerequisites>
 
   <dependencyManagement>
@@ -89,17 +96,17 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.5.3</version>
+        <version>2.6.0-alpha2</version>
       </dependency>
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>encode</artifactId>
-        <version>2.5.3</version>
+        <version>2.6.0-alpha2</version>
       </dependency>
       <dependency>
         <groupId>io.vavr</groupId>
         <artifactId>vavr</artifactId>
-        <version>0.9.0</version>
+        <version>0.9.2</version>
       </dependency>
 
       <dependency>
@@ -142,7 +149,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.3</version>
+          <version>3.0.0-M1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -189,14 +196,52 @@
           <version>2.6</version>
         </plugin>
 
-        <!-- Require JDK >= 1.8 -->
+        <!--
+          Use JDK 9 to produce a backwards-compatible jar.
+        -->
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.5.1</version>
+
+          <executions>
+            <!--
+              Compile everything as JDK 9 bytecode: This ensures that we get
+              decent compilation errors such as missing "requires" directives
+              in the module descriptor.
+            -->
+            <execution>
+              <id>default-compile</id>
+              <configuration>
+                <source>9</source>
+                <target>9</target>
+                <release>9</release>
+              </configuration>
+            </execution>
+
+            <!--
+              Recompile everything except for the module descriptor as JDK 8
+              bytecode.
+            -->
+            <execution>
+              <id>compile-8</id>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+              <configuration>
+                <excludes>
+                  <exclude>module-info.java</exclude>
+                </excludes>
+              </configuration>
+            </execution>
+          </executions>
+
+          <!-- These are the default settings for all executions. -->
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>8</source>
+            <target>8</target>
+            <release>8</release>
           </configuration>
         </plugin>
 
@@ -277,6 +322,31 @@
     <!-- Shared build logic for all submodules -->
     <plugins>
 
+      <!-- Check various preconditions for building. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <executions>
+          <execution>
+            <id>enforce-rules</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <!-- Require JDK 9+ -->
+                <requireJavaVersion>
+                  <version>[9,)</version>
+                  <message>JDK 9+ is required to build this project.</message>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Create source jars -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -338,8 +408,9 @@
     </plugins>
   </build>
 
-  <!-- Optionally sign artifacts -->
   <profiles>
+
+    <!-- Sign artifacts when deploying to Central -->
     <profile>
       <id>immutables.deployment</id>
       <activation>
@@ -359,6 +430,41 @@
                 <phase>verify</phase>
                 <goals>
                   <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+     Enable the staging plugin for releases
+
+     This will deploy the code to Maven Central in a single command:
+
+     $ mvn clean deploy -Ddyn4j.release=true
+   -->
+    <profile>
+      <id>dyn4j-release</id>
+      <activation>
+        <property>
+          <name>dyn4j.release</name>
+        </property>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>deploy-packages</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
                 </goals>
               </execution>
             </executions>
