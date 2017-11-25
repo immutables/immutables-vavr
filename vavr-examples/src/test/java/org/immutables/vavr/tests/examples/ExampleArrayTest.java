@@ -40,6 +40,26 @@ public final class ExampleArrayTest
   }
 
   @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleArrayType.Builder b =
+            ImmutableExampleArrayType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(0), // add a duplicate
+            Integer.valueOf(2));
+
+    final ImmutableExampleArrayType a0 = b.build();
+    Assert.assertEquals(4L, (long) a0.integers().size());
+    Assert.assertEquals(0L, a0.integers().get(0).longValue());
+    Assert.assertEquals(1L, a0.integers().get(1).longValue());
+    Assert.assertEquals(0L, a0.integers().get(2).longValue());
+    Assert.assertEquals(2L, a0.integers().get(3).longValue());
+  }
+
+  @Test
   public void testAddAll()
   {
     final ImmutableExampleArrayType.Builder b =

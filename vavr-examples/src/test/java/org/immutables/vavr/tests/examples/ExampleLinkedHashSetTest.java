@@ -16,10 +16,12 @@
 
 package org.immutables.vavr.tests.examples;
 
-import io.vavr.collection.LinkedHashSet;
 import org.immutables.vavr.examples.ImmutableExampleLinkedHashSetType;
 import org.junit.Assert;
 import org.junit.Test;
+
+import io.vavr.collection.Iterator;
+import io.vavr.collection.LinkedHashSet;
 
 public final class ExampleLinkedHashSetTest
 {
@@ -38,6 +40,28 @@ public final class ExampleLinkedHashSetTest
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(2)));
+  }
+
+  @Test
+  public void testAddVarArgs()
+  {
+    final ImmutableExampleLinkedHashSetType.Builder b =
+            ImmutableExampleLinkedHashSetType.builder();
+
+    b.addIntegers(
+            Integer.valueOf(0),
+            Integer.valueOf(2),
+            Integer.valueOf(0), // add duplicate - must be ignored
+            Integer.valueOf(1));
+
+    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    Assert.assertEquals(3L, (long) a0.integers().size());
+    Iterator<Integer> iterator = a0.integers().iterator();
+    Assert.assertEquals(Integer.valueOf(0), iterator.next());
+    // order must be preserved
+    Assert.assertEquals(Integer.valueOf(2), iterator.next());
+    Assert.assertEquals(Integer.valueOf(1), iterator.next());
+    Assert.assertFalse(iterator.hasNext());
   }
 
   @Test
