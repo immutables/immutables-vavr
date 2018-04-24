@@ -23,7 +23,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <org.immutables.version>2.6.0-alpha2</org.immutables.version>
+    <org.immutables.version>2.6.0-alpha3</org.immutables.version>
   </properties>
 
   <scm>
