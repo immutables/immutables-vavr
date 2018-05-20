@@ -194,7 +194,9 @@
                 <encoding>UTF-8</encoding>
                 <consoleOutput>true</consoleOutput>
                 <failsOnError>true</failsOnError>
-                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <sourceDirectories>
+                  <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                </sourceDirectories>
               </configuration>
               <goals>
                 <goal>check</goal>
