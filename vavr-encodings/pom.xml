@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.immutables.vavr</groupId>
     <artifactId>vavr</artifactId>
-    <version>0.4.0</version>
+    <version>0.5.0</version>
   </parent>
   <artifactId>vavr-encodings</artifactId>
 
@@ -50,6 +50,21 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
+      </plugin>
+
+      <!-- Process annotations -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <dependency>
+              <groupId>org.immutables</groupId>
+              <artifactId>value</artifactId>
+              <version>${org.immutables.version}</version>
+            </dependency>
+          </annotationProcessorPaths>
+        </configuration>
       </plugin>
     </plugins>
   </build>

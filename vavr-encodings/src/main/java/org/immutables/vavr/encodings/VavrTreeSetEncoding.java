@@ -16,6 +16,7 @@
 
 package org.immutables.vavr.encodings;
 
+import io.vavr.collection.HashSet;
 import io.vavr.collection.TreeSet;
 import org.immutables.encode.Encoding;
 
@@ -46,6 +47,15 @@ class VavrTreeSetEncoding<T extends Comparable<T>>
       final T element)
     {
       this.set = this.set.add(element);
+    }
+
+    @SafeVarargs
+    @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
+    @Encoding.Init
+    final void addVarArgs(
+            final T... elements)
+    {
+      this.set = this.set.addAll(HashSet.of(elements));
     }
 
     @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)

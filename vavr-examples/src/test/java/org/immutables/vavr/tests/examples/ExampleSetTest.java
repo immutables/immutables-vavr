@@ -16,26 +16,25 @@
 
 package org.immutables.vavr.tests.examples;
 
-import org.immutables.vavr.examples.ImmutableExampleLinkedHashSetType;
+import org.immutables.vavr.examples.ImmutableExampleSetType;
 import org.junit.Assert;
 import org.junit.Test;
 
-import io.vavr.collection.Iterator;
-import io.vavr.collection.LinkedHashSet;
+import io.vavr.collection.HashSet;
 
-public final class ExampleLinkedHashSetTest
+public final class ExampleSetTest
 {
   @Test
   public void testAdd()
   {
-    final ImmutableExampleLinkedHashSetType.Builder b =
-      ImmutableExampleLinkedHashSetType.builder();
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
 
     b.addIntegers(Integer.valueOf(0));
     b.addIntegers(Integer.valueOf(1));
     b.addIntegers(Integer.valueOf(2));
 
-    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    final ImmutableExampleSetType a0 = b.build();
     Assert.assertEquals(3L, (long) a0.integers().size());
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
@@ -45,37 +44,34 @@ public final class ExampleLinkedHashSetTest
   @Test
   public void testAddVarArgs()
   {
-    final ImmutableExampleLinkedHashSetType.Builder b =
-            ImmutableExampleLinkedHashSetType.builder();
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
 
     b.addIntegers(
             Integer.valueOf(0),
-            Integer.valueOf(2),
-            Integer.valueOf(0), // add duplicate - must be ignored
-            Integer.valueOf(1));
+            Integer.valueOf(1),
+            Integer.valueOf(0), // add duplicate
+            Integer.valueOf(2));
 
-    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    final ImmutableExampleSetType a0 = b.build();
     Assert.assertEquals(3L, (long) a0.integers().size());
-    Iterator<Integer> iterator = a0.integers().iterator();
-    Assert.assertEquals(Integer.valueOf(0), iterator.next());
-    // order must be preserved
-    Assert.assertEquals(Integer.valueOf(2), iterator.next());
-    Assert.assertEquals(Integer.valueOf(1), iterator.next());
-    Assert.assertFalse(iterator.hasNext());
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
+    Assert.assertTrue(a0.integers().contains(Integer.valueOf(2)));
   }
 
   @Test
   public void testSet()
   {
-    final ImmutableExampleLinkedHashSetType.Builder b =
-      ImmutableExampleLinkedHashSetType.builder();
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
 
-    b.integers(LinkedHashSet.of(
-      Integer.valueOf(0),
-      Integer.valueOf(1),
-      Integer.valueOf(2)));
+    b.integers(HashSet.of(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2)));
 
-    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    final ImmutableExampleSetType a0 = b.build();
     Assert.assertEquals(3L, (long) a0.integers().size());
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
@@ -85,15 +81,15 @@ public final class ExampleLinkedHashSetTest
   @Test
   public void testSetIterable()
   {
-    final ImmutableExampleLinkedHashSetType.Builder b =
-      ImmutableExampleLinkedHashSetType.builder();
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
 
-    b.setIterableIntegers(LinkedHashSet.of(
-      Integer.valueOf(0),
-      Integer.valueOf(1),
-      Integer.valueOf(2)));
+    b.setIterableIntegers(HashSet.of(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2)));
 
-    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    final ImmutableExampleSetType a0 = b.build();
     Assert.assertEquals(3L, (long) a0.integers().size());
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));
@@ -103,23 +99,23 @@ public final class ExampleLinkedHashSetTest
   @Test
   public void testAddAll()
   {
-    final ImmutableExampleLinkedHashSetType.Builder b =
-      ImmutableExampleLinkedHashSetType.builder();
+    final ImmutableExampleSetType.Builder b =
+            ImmutableExampleSetType.builder();
 
-    final LinkedHashSet<Integer> s0 = LinkedHashSet.of(
-      Integer.valueOf(0),
-      Integer.valueOf(1),
-      Integer.valueOf(2));
+    final HashSet<Integer> s0 = HashSet.of(
+            Integer.valueOf(0),
+            Integer.valueOf(1),
+            Integer.valueOf(2));
 
-    final LinkedHashSet<Integer> s1 = LinkedHashSet.of(
-      Integer.valueOf(10),
-      Integer.valueOf(11),
-      Integer.valueOf(12));
+    final HashSet<Integer> s1 = HashSet.of(
+            Integer.valueOf(10),
+            Integer.valueOf(11),
+            Integer.valueOf(12));
 
     b.addAllIntegers(s0);
     b.addAllIntegers(s1);
 
-    final ImmutableExampleLinkedHashSetType a0 = b.build();
+    final ImmutableExampleSetType a0 = b.build();
     Assert.assertEquals(6L, (long) a0.integers().size());
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(0)));
     Assert.assertTrue(a0.integers().contains(Integer.valueOf(1)));

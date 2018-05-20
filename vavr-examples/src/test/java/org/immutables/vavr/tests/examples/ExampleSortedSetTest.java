@@ -48,9 +48,10 @@ public final class ExampleSortedSetTest
       ImmutableExampleSortedSetType.builder();
 
     b.integers(TreeSet.of(
-      Integer.valueOf(0),
-      Integer.valueOf(1),
-      Integer.valueOf(2)));
+            Integer.valueOf(0),
+            Integer.valueOf(2),   // add element out-of order
+            Integer.valueOf(0),   // add duplicate
+            Integer.valueOf(1)));
 
     final ImmutableExampleSortedSetType a0 = b.build();
     Assert.assertEquals(3L, (long) a0.integers().size());

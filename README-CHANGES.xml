@@ -1,74 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<c:changelog xmlns:c="http://schemas.io7m.com/changelog/2.0.0">
-  <c:project>immutables-vavr</c:project>
-
-  <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2017-07-02</c:date>
-    <c:version>0.4.0</c:version>
-    <c:item>
-      <c:date>2017-06-13</c:date>
-      <c:type-code-change/>
-      <c:ticket>5</c:ticket>
-      <c:summary>Rename project to immutables-vavr and target Vavr 0.9.0.</c:summary>
-    </c:item>
-    <c:item>
-      <c:date>2017-07-02</c:date>
-      <c:type-code-fix/>
-      <c:ticket>8</c:ticket>
-      <c:summary>Provide default field values to fix Jackson serialization.</c:summary>
-    </c:item>
-  </c:release>
-
-  <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2017-04-22</c:date>
-    <c:version>0.3.0</c:version>
-    <c:item>
-      <c:date>2017-04-22</c:date>
-      <c:type-code-fix/>
-      <c:ticket>6</c:ticket>
-      <c:summary>Use StandardNaming.PUT for map types.</c:summary>
-    </c:item>
-    <c:item>
-      <c:date>2017-04-22</c:date>
-      <c:type-code-fix/>
-      <c:summary>Add test suite for example types.</c:summary>
-    </c:item>
-  </c:release>
-
-  <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2017-04-21</c:date>
-    <c:version>0.2.1</c:version>
-    <c:item>
-      <c:date>2017-04-21</c:date>
-      <c:type-code-fix/>
-      <c:ticket>6</c:ticket>
-      <c:summary>Add a missing Multimap encoding.</c:summary>
-    </c:item>
-  </c:release>
-
-  <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2017-01-09</c:date>
-    <c:version>0.2.0</c:version>
-    <c:item>
-      <c:date>2017-01-09</c:date>
-      <c:type-code-fix/>
-      <c:ticket>3</c:ticket>
-      <c:summary>Fix a compilation error in generated code by using immutables 2.4.0.</c:summary>
-    </c:item>
-  </c:release>
-
-  <c:release c:ticket-system="com.github.immutables.vavr">
-    <c:date>2016-12-08</c:date>
-    <c:version>0.1.0</c:version>
-    <c:item>
-      <c:date>2016-12-08</c:date>
-      <c:type-code-new/>
-      <c:summary>Initial release.</c:summary>
-    </c:item>
-  </c:release>
-
-  <c:ticket-system xml:id="com.github.immutables.vavr">
-    <c:ticket-url>https://github.com/immutables/immutables-vavr/issues/</c:ticket-url>
-  </c:ticket-system>
-
+<?xml version="1.0" encoding="UTF-8"?><c:changelog xmlns:c="urn:com.io7m.changelog:4.0" project="immutables-vavr">
+  <c:releases>
+    <c:release date="2016-12-08T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.1.0">
+      <c:changes>
+        <c:change date="2016-12-08T00:00:00+00:00" summary="Initial release."/>
+      </c:changes>
+    </c:release>
+    <c:release date="2017-01-09T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.2.0">
+      <c:changes>
+        <c:change date="2017-01-09T00:00:00+00:00" summary="Fix a compilation error in generated code by using immutables 2.4.0.">
+          <c:tickets>
+            <c:ticket id="3"/>
+          </c:tickets>
+        </c:change>
+      </c:changes>
+    </c:release>
+    <c:release date="2017-04-21T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.2.1">
+      <c:changes>
+        <c:change date="2017-04-21T00:00:00+00:00" summary="Add a missing Multimap encoding.">
+          <c:tickets>
+            <c:ticket id="6"/>
+          </c:tickets>
+        </c:change>
+      </c:changes>
+    </c:release>
+    <c:release date="2017-04-22T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.3.0">
+      <c:changes>
+        <c:change date="2017-04-22T00:00:00+00:00" summary="Use StandardNaming.PUT for map types.">
+          <c:tickets>
+            <c:ticket id="6"/>
+          </c:tickets>
+        </c:change>
+        <c:change date="2017-04-22T00:00:00+00:00" summary="Add test suite for example types."/>
+      </c:changes>
+    </c:release>
+    <c:release date="2017-07-02T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.4.0">
+      <c:changes>
+        <c:change compatible="false" date="2017-06-13T00:00:00+00:00" summary="Rename project to immutables-vavr and target Vavr 0.9.0.">
+          <c:tickets>
+            <c:ticket id="5"/>
+          </c:tickets>
+        </c:change>
+        <c:change date="2017-07-02T00:00:00+00:00" summary="Provide default field values to fix Jackson serialization.">
+          <c:tickets>
+            <c:ticket id="8"/>
+          </c:tickets>
+        </c:change>
+      </c:changes>
+    </c:release>
+    <c:release date="2017-11-25T11:54:00+00:00" ticket-system="com.github.immutables.vavr" version="0.5.0">
+      <c:changes>
+        <c:change date="2017-11-25T00:00:00+00:00" summary="Publish a Java 9 module. The project now requires JDK 9 to build, but still only requires JDK 8 to run.">
+          <c:tickets>
+            <c:ticket id="15"/>
+          </c:tickets>
+        </c:change>
+        <c:change date="2017-11-25T00:00:00+00:00" summary="Add variadic add methods for all types. Thanks tmtron!">
+          <c:tickets>
+            <c:ticket id="13"/>
+          </c:tickets>
+        </c:change>
+        <c:change date="2017-11-25T00:00:00+00:00" summary="Use LinkedHashSet internally for more predictable Jackson serialization">
+          <c:tickets>
+            <c:ticket id="8"/>
+          </c:tickets>
+        </c:change>
+        <c:change date="2017-11-25T11:54:00+00:00" summary="Fix Jackson serialization">
+          <c:tickets>
+            <c:ticket id="8"/>
+          </c:tickets>
+        </c:change>
+      </c:changes>
+    </c:release>
+  </c:releases>
+  <c:ticket-systems>
+    <c:ticket-system default="false" id="com.github.immutables.vavr" url="https://github.com/immutables/immutables-vavr/issues/"/>
+  </c:ticket-systems>
 </c:changelog>
