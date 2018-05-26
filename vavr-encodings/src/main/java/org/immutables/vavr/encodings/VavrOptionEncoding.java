@@ -64,7 +64,6 @@ class VavrOptionEncoding<T>
       this.optional = opt;
     }
 
-    @Encoding.Naming(value = "setValue*")
     @Encoding.Init
     void setValue(
       final T x)

@@ -47,7 +47,7 @@
         </c:change>
       </c:changes>
     </c:release>
-    <c:release date="2017-11-25T11:54:00+00:00" ticket-system="com.github.immutables.vavr" version="0.5.0">
+    <c:release date="2017-11-25T00:00:00+00:00" ticket-system="com.github.immutables.vavr" version="0.5.0">
       <c:changes>
         <c:change date="2017-11-25T00:00:00+00:00" summary="Publish a Java 9 module. The project now requires JDK 9 to build, but still only requires JDK 8 to run.">
           <c:tickets>
@@ -64,9 +64,23 @@
             <c:ticket id="8"/>
           </c:tickets>
         </c:change>
-        <c:change date="2017-11-25T11:54:00+00:00" summary="Fix Jackson serialization">
+        <c:change date="2017-11-25T00:00:00+00:00" summary="Fix Jackson serialization">
           <c:tickets>
             <c:ticket id="8"/>
+          </c:tickets>
+        </c:change>
+      </c:changes>
+    </c:release>
+    <c:release date="2018-05-26T15:15:47+00:00" ticket-system="com.github.immutables.vavr" version="0.6.0">
+      <c:changes>
+        <c:change compatible="false" date="2018-05-26T00:00:00+00:00" summary="Correct exported module name to org.immutables.vavr.encodings">
+          <c:tickets>
+            <c:ticket id="20"/>
+          </c:tickets>
+        </c:change>
+        <c:change compatible="false" date="2018-05-26T15:15:47+00:00" summary="Change Option encoding to produce overloaded methods">
+          <c:tickets>
+            <c:ticket id="19"/>
           </c:tickets>
         </c:change>
       </c:changes>

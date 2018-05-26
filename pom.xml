@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.vavr</groupId>
   <artifactId>vavr</artifactId>
-  <version>0.5.0</version>
+  <version>0.6.0</version>
 
   <packaging>pom</packaging>
   <name>vavr</name>
@@ -458,13 +458,13 @@
 
      This will deploy the code to Maven Central in a single command:
 
-     $ mvn clean deploy -Ddyn4j.release=true
+     $ mvn clean deploy -Dimmutables.release=true
    -->
     <profile>
-      <id>dyn4j-release</id>
+      <id>immutables-release</id>
       <activation>
         <property>
-          <name>dyn4j.release</name>
+          <name>immutables.release</name>
         </property>
       </activation>
 
