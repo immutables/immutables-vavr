@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module vavr.encodings
+module org.immutables.vavr.encodings
 {
   requires static org.immutables.value;
   requires org.immutables.encode;
