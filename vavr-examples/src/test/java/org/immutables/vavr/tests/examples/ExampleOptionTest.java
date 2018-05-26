@@ -29,7 +29,7 @@ public final class ExampleOptionTest
     final ImmutableExampleOptionType.Builder b =
       ImmutableExampleOptionType.builder();
 
-    b.setValueOptionalInteger(Integer.valueOf(23));
+    b.optionalInteger(Integer.valueOf(23));
 
     final ImmutableExampleOptionType a0 = b.build();
     Assert.assertEquals(Option.of(Integer.valueOf(23)), a0.optionalInteger());
@@ -63,7 +63,7 @@ public final class ExampleOptionTest
     final ImmutableExampleOptionType.Builder b =
       ImmutableExampleOptionType.builder();
 
-    b.setValueOptionalInteger(Integer.valueOf(23));
+    b.optionalInteger(Integer.valueOf(23));
     b.unsetOptionalInteger();
 
     final ImmutableExampleOptionType a0 = b.build();
