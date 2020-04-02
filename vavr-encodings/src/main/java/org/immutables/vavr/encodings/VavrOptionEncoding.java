@@ -43,7 +43,7 @@ class VavrOptionEncoding<T>
   public Option<T> with(
     final T value)
   {
-    return Option.some(value);
+    return Option.of(value);
   }
 
   @Encoding.Builder
@@ -59,16 +59,16 @@ class VavrOptionEncoding<T>
     @Encoding.Init
     @Encoding.Copy
     void set(
-      final Option<T> opt)
+      final Option<T> value)
     {
-      this.optional = opt;
+      this.optional = value;
     }
 
     @Encoding.Init
     void setValue(
-      final T x)
+      final T value)
     {
-      this.optional = Option.of(x);
+      this.optional = Option.of(value);
     }
 
     @Encoding.Naming(value = "unset*")

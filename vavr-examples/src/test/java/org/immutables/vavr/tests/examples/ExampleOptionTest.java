@@ -69,4 +69,15 @@ public final class ExampleOptionTest
     final ImmutableExampleOptionType a0 = b.build();
     Assert.assertEquals(Option.none(), a0.optionalInteger());
   }
+
+  @Test
+  public void testWith() {
+    ImmutableExampleOptionType a = ImmutableExampleOptionType.builder()
+      .optionalInteger(Integer.valueOf(23))
+      .build();
+
+    ImmutableExampleOptionType a1 = a.withOptionalInteger((Integer) null);
+
+    Assert.assertEquals(Option.none(), a1.optionalInteger());
+  }
 }
