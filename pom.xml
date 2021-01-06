@@ -92,8 +92,8 @@
   </distributionManagement>
 
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/immutables/immutables-vavr</url>
+    <system>GitHub Actions</system>
+    <url>https://github.com/immutables/immutables-vavr/actions</url>
   </ciManagement>
 
   <prerequisites>
