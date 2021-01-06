@@ -12,6 +12,12 @@ Note: Prior to a 1.0.0 release, the encodings are still in the
 experimental phase and therefore should not be relied upon to provide
 a stable API.
 
+| JVM             | Platform | Status |
+|-----------------|----------|--------|
+| OpenJDK LTS     | Linux    | [![Build (OpenJDK LTS, Linux)](https://img.shields.io/github/workflow/status/immutables/immutables-vavr/main-openjdk_lts-linux)](https://github.com/immutables/immutables-vavr/actions?query=workflow%3Amain-openjdk_lts-linux) |
+| OpenJDK Current | Linux    | [![Build (OpenJDK Current, Linux)](https://img.shields.io/github/workflow/status/immutables/immutables-vavr/main-openjdk_current-linux)](https://github.com/immutables/immutables-vavr/actions?query=workflow%3Amain-openjdk_current-linux)
+| OpenJDK Current | Windows  | [![Build (OpenJDK Current, Windows)](https://img.shields.io/github/workflow/status/immutables/immutables-vavr/main-openjdk_current-windows)](https://github.com/immutables/immutables-vavr/actions?query=workflow%3Amain-openjdk_current-windows)
+
 #### Ten Second Tutorial
 
 Include the encodings in your project:
