@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
   <name>vavr</name>
   <description>Immutables.org encodings for Vavr</description>
-  <url>http://github.com/immutables/immutables-vavr</url>
+  <url>https://github.com/immutables/immutables-vavr</url>
 
   <modules>
     <module>vavr-checkstyle</module>
@@ -58,7 +58,7 @@
 
   <organization>
     <name>The Immutables.org authors</name>
-    <url>http://immutables.org</url>
+    <url>https://immutables.org</url>
   </organization>
 
   <licenses>
@@ -71,7 +71,7 @@
   </licenses>
 
   <issueManagement>
-    <url>http://github.com/immutables/immutables-vavr/issues</url>
+    <url>https://github.com/immutables/immutables-vavr/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -79,7 +79,7 @@
     <site>
       <id>GitHub</id>
       <name>GitHub</name>
-      <url>http://immutables.github.io/</url>
+      <url>https://immutables.github.io/</url>
     </site>
     <repository>
       <id>sonatype-nexus-staging</id>
