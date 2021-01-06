@@ -1,0 +1,19 @@
+name: main-openjdk_lts-linux
+
+on:
+  push:
+    branches: [ develop, feature/*, release/* ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Build
+        run: mvn --errors clean verify
