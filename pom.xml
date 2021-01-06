@@ -138,39 +138,32 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
+          <version>3.0.0-M1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
+          <version>3.0.0-M1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.2.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.0.0</version>
-          <dependencies>
-            <dependency>
-              <groupId>org.apache.commons</groupId>
-              <artifactId>commons-lang3</artifactId>
-              <version>3.7</version>
-            </dependency>
-          </dependencies>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.21.0</version>
+          <version>3.0.0-M5</version>
           <configuration>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
@@ -180,7 +173,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.1</version>
           <dependencies>
             <dependency>
               <groupId>${project.groupId}</groupId>
@@ -216,30 +209,30 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <!--
-          Use JDK 9 to produce a backwards-compatible jar.
+          Use JDK 11 to produce a backwards-compatible jar.
         -->
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.1</version>
 
           <executions>
             <!--
-              Compile everything as JDK 9 bytecode: This ensures that we get
+              Compile everything as JDK 11 bytecode: This ensures that we get
               decent compilation errors such as missing "requires" directives
               in the module descriptor.
             -->
             <execution>
               <id>default-compile</id>
               <configuration>
-                <source>9</source>
-                <target>9</target>
-                <release>9</release>
+                <source>11</source>
+                <target>11</target>
+                <release>11</release>
               </configuration>
             </execution>
 
@@ -272,7 +265,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
           <executions>
             <!-- Produce jar file with custom manifest -->
             <execution>
@@ -308,6 +301,31 @@
                     <Specification-Version>${project.version}</Specification-Version>
                     <Specification-Vendor>immutables.org</Specification-Vendor>
                     <Implementation-Title>${project.name}</Implementation-Title>
+                    <Implementation-Version>${project.version}</Implementation-Version>
+                    <Implementation-Vendor>immutables.org</Implementation-Vendor>
+                    <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                  </manifestEntries>
+                </archive>
+              </configuration>
+            </execution>
+
+            <!-- Produce empty JavaDoc jar -->
+            <execution>
+              <id>javadoc-jar</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+              <configuration>
+                <excludes>
+                  <exclude>**/**</exclude>
+                </excludes>
+                <classifier>javadoc</classifier>
+                <archive>
+                  <manifestEntries>
+                    <Specification-Title>${project.name} (JavaDoc)</Specification-Title>
+                    <Specification-Version>${project.version}</Specification-Version>
+                    <Specification-Vendor>immutables.org</Specification-Vendor>
+                    <Implementation-Title>${project.name} (JavaDoc)</Implementation-Title>
                     <Implementation-Version>${project.version}</Implementation-Version>
                     <Implementation-Vendor>immutables.org</Implementation-Vendor>
                     <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
@@ -359,10 +377,10 @@
             </goals>
             <configuration>
               <rules>
-                <!-- Require JDK 9+ -->
+                <!-- Require JDK 11+ -->
                 <requireJavaVersion>
-                  <version>[9,)</version>
-                  <message>JDK 9+ is required to build this project.</message>
+                  <version>[11,)</version>
+                  <message>JDK 11+ is required to build this project.</message>
                 </requireJavaVersion>
               </rules>
             </configuration>
@@ -382,36 +400,6 @@
               <goal>test-jar-no-fork</goal>
             </goals>
             <configuration>
-              <archive>
-                <manifestEntries>
-                  <Specification-Title>${project.name}</Specification-Title>
-                  <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>immutables.org</Specification-Vendor>
-                  <Implementation-Title>${project.name}</Implementation-Title>
-                  <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>immutables.org</Implementation-Vendor>
-                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                  <Built-By>io7m</Built-By>
-                </manifestEntries>
-              </archive>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Create javadoc jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <bottom><![CDATA[Copyright &#169; {currentYear} Immutables Authors and Contributors http://immutables.org]]></bottom>
               <archive>
                 <manifestEntries>
                   <Specification-Title>${project.name}</Specification-Title>
