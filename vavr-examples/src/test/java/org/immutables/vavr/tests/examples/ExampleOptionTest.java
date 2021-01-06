@@ -69,4 +69,36 @@ public final class ExampleOptionTest
     final ImmutableExampleOptionType a0 = b.build();
     Assert.assertEquals(Option.none(), a0.optionalInteger());
   }
+  
+  @Test(expected = NullPointerException.class)
+  public void testSetNullValue()
+  {
+    final ImmutableExampleOptionType.Builder b =
+            ImmutableExampleOptionType.builder();
+    b.optionalInteger((Integer)null);
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testSetNullOption()
+  {
+    final ImmutableExampleOptionType.Builder b =
+            ImmutableExampleOptionType.builder();
+    b.optionalInteger((Option<Integer>)null);
+  }
+  
+  @Test(expected = NullPointerException.class)
+  public void testWithNull()
+  {
+    final ImmutableExampleOptionType b =
+            ImmutableExampleOptionType.builder().build();
+    b.withOptionalInteger((Integer)null);
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testWithNullOption()
+  {
+    final ImmutableExampleOptionType b =
+            ImmutableExampleOptionType.builder().build();
+    b.withOptionalInteger((Option<Integer>)null);
+  }
 }
