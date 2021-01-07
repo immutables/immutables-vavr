@@ -86,14 +86,14 @@
         </c:change>
       </c:changes>
     </c:release>
-    <c:release date="2021-01-06T21:49:10+00:00" is-open="true" ticket-system="com.github.immutables.vavr" version="0.6.1">
+    <c:release date="2021-01-07T14:58:55+00:00" is-open="false" ticket-system="com.github.immutables.vavr" version="0.6.1">
       <c:changes>
         <c:change date="2021-01-06T00:00:00+00:00" summary="Update Option encoding to be stricter about nulls">
           <c:tickets>
             <c:ticket id="27"/>
           </c:tickets>
         </c:change>
-        <c:change date="2021-01-06T21:49:10+00:00" summary="Start requiring JDK 11 to build the project (the compiled code remains JDK 8 compatible)"/>
+        <c:change date="2021-01-06T00:00:00+00:00" summary="Start requiring JDK 11 to build the project (the compiled code remains JDK 8 compatible)"/>
       </c:changes>
     </c:release>
   </c:releases>
