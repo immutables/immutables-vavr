@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.vavr</groupId>
   <artifactId>vavr</artifactId>
-  <version>0.6.1</version>
+  <version>0.6.2</version>
 
   <packaging>pom</packaging>
   <name>vavr</name>
@@ -38,6 +38,12 @@
       <name>Mark Raynsford</name>
       <email>code@io7m.com</email>
       <url>http://io7m.com</url>
+    </developer>
+    <developer>
+      <id>elucash</id>
+      <name>Ievgen Lukash</name>
+      <email>e.lucash@gmail.com</email>
+      <timezone>-8</timezone>
     </developer>
   </developers>
 
