@@ -18,6 +18,7 @@ package org.immutables.vavr.tests.examples;
 
 import io.vavr.control.Option;
 import org.immutables.vavr.examples.ImmutableExampleOptionType;
+import org.immutables.vavr.examples.ImmutableExampleOptionWithParametersType;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -100,5 +101,18 @@ public final class ExampleOptionTest
     final ImmutableExampleOptionType b =
             ImmutableExampleOptionType.builder().build();
     b.withOptionalInteger((Option<Integer>)null);
+  }
+  
+  @Test
+  public void testParameter() 
+  {
+    final ImmutableExampleOptionWithParametersType b = ImmutableExampleOptionWithParametersType.of(Option.of(1));
+    Assert.assertEquals(Option.of(1), b.optionalInteger());
+  }
+  
+  @Test(expected = NullPointerException.class)
+  public void testParameterWithNullOption()
+  {
+    final ImmutableExampleOptionWithParametersType b = ImmutableExampleOptionWithParametersType.of(null);
   }
 }
