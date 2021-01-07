@@ -16,10 +16,11 @@
 
 package org.immutables.vavr.encodings;
 
-import io.vavr.control.Option;
+import java.util.Objects;
+
 import org.immutables.encode.Encoding;
 
-import java.util.Objects;
+import io.vavr.control.Option;
 
 @Encoding
 class VavrOptionEncoding<T>
@@ -43,7 +44,7 @@ class VavrOptionEncoding<T>
   public Option<T> with(
     final T value)
   {
-    return Option.some(value);
+    return Option.some(Objects.requireNonNull(value));
   }
 
   @Encoding.Builder
@@ -61,14 +62,14 @@ class VavrOptionEncoding<T>
     void set(
       final Option<T> opt)
     {
-      this.optional = opt;
+      this.optional = Objects.requireNonNull(opt);
     }
 
     @Encoding.Init
     void setValue(
       final T x)
     {
-      this.optional = Option.of(x);
+      this.optional = Option.some(Objects.requireNonNull(x));
     }
 
     @Encoding.Naming(value = "unset*")

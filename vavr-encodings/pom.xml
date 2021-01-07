@@ -8,14 +8,14 @@
   <parent>
     <groupId>org.immutables.vavr</groupId>
     <artifactId>vavr</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
   </parent>
   <artifactId>vavr-encodings</artifactId>
 
   <packaging>jar</packaging>
   <name>vavr-encodings</name>
   <description>Immutables.org encodings for Vavr (Encodings)</description>
-  <url>http://github.com/immutables/immutables-vavr/</url>
+  <url>https://github.com/immutables/immutables-vavr/</url>
 
   <scm>
     <url>${project.parent.scm.url}</url>
