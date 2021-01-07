@@ -49,8 +49,7 @@ class VavrOptionEncoding<T>
 
   @Encoding.Of
   static <T> Option<T> init(final Option<T> value) {
-    Objects.requireNonNull(value);
-    return value;
+    return Objects.requireNonNull(value);
   }
 
   @Encoding.Builder
