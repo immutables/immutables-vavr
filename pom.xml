@@ -39,6 +39,12 @@
       <email>code@io7m.com</email>
       <url>http://io7m.com</url>
     </developer>
+    <developer>
+      <id>elucash</id>
+      <name>Ievgen Lukash</name>
+      <email>e.lucash@gmail.com</email>
+      <timezone>-8</timezone>
+    </developer>
   </developers>
 
   <contributors>
