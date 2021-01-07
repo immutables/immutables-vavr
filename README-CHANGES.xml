@@ -96,9 +96,9 @@
         <c:change date="2021-01-06T00:00:00+00:00" summary="Start requiring JDK 11 to build the project (the compiled code remains JDK 8 compatible)"/>
       </c:changes>
     </c:release>
-    <c:release date="2021-01-07T16:39:29+00:00" is-open="true" ticket-system="com.github.immutables.vavr" version="0.6.2">
+    <c:release date="2021-01-07T16:50:32+00:00" is-open="false" ticket-system="com.github.immutables.vavr" version="0.6.2">
       <c:changes>
-        <c:change date="2021-01-07T16:39:29+00:00" summary="Add an additional null check for Option provided to factory methods generated when @Value.Parameter is used"/>
+        <c:change date="2021-01-07T00:00:00+00:00" summary="Add an additional null check for Option provided to factory methods generated when @Value.Parameter is used"/>
       </c:changes>
     </c:release>
   </c:releases>

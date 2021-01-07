@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.vavr</groupId>
   <artifactId>vavr</artifactId>
-  <version>0.6.2-SNAPSHOT</version>
+  <version>0.6.2</version>
 
   <packaging>pom</packaging>
   <name>vavr</name>
